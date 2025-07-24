@@ -27,19 +27,15 @@ $valueClass = $field->params->get('value_render_class');
 
 // Ottengo l'ID del campo
 $fieldid = $field->id;
+// Aggiungo ID per il menu indice
+$idelm = 'id="art-par-'.$fieldid.'"';
 
 if ($value == '') {
     return;
 }
 
-// Aggiungo ID per il menu indice
-switch ($label) :
-    case 'Modalità di accesso':
-        $idelm = 'id="art-par-05"';
-        break;
-    default:
-        $idelm = 'id="art-par-'.$fieldid.'"';
-endswitch;
+
+
 
 ?>
 <?php if ($showLabel == 1) : ?>
