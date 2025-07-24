@@ -644,7 +644,8 @@ Creare un nuovo campo e chiamarlo esattamente così.
 All’interno della tab Generale impostare i seguenti parametri: 
 
 - Tipo: Testo (text) 
-- Nome: nome-sede 
+- Nome: nome-sede
+> nome-sede-servizio 
 - Etichetta: Nome 
 - Obbligatorio: Sì 
 - Usa in sottomodulo: Sì 
