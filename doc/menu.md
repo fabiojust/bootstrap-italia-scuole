@@ -67,7 +67,7 @@ Creare una nuova voce di menu nascosta denominata “Scuola/Istituto” di tipo 
 Stesso procedimento di scuola/istituto, selezionando naturalmente una categoria differente.
 
 #### 1.6. Servizi
-Creare una nuova voce di menu denominata “servizi” di tipo “categoria blog”. Su scegli una categoria seleziona “servizi” Nella tab opzioni -> scegli un layout -> servizio Categoria -> nascondi.
+Creare una nuova voce di menu denominata “servizi” di tipo “Blog per le categorie della sezione servizi”. Su scegli una categoria seleziona “servizi” Nella tab opzioni -> scegli un layout -> servizio Categoria -> nascondi.
 
 ##### 1.6.1. Panoramica
 (Voce principale - servizi) <br>
@@ -75,15 +75,15 @@ Creare una voce di menu denominata “Panoramica” di tipo alias voce di menu. 
 
 ##### 1.6.2. Famiglie e studenti
 (Voce principale - - panoramica) <br>
-Creare una voce di menu denominata “Famiglie e studenti” di tipo “Categoria blog”. Su “Tipo di voce di menu” seleziona “Categoria blog”. Su “Scegli una categoria” seleziona “Famiglie e studenti”. Nella tab opzioni -> scegli un layout -> servizio.
+Creare una voce di menu denominata “Famiglie e studenti” di tipo “Blog per le categorie della sezione servizi”. Su “Tipo di voce di menu” seleziona “Blog per le categorie della sezione servizi”. Su “Scegli una categoria” seleziona “Famiglie e studenti”. Nella tab opzioni -> scegli un layout -> servizio.
 
 ##### 1.6.3. Personale scolastico
 (Voce principale - - panoramica) <br>
-Creare una voce di menu denominata “Personale scolastico” di tipo “Categoria blog”. Su “Tipo di voce di menu” seleziona “Categoria blog”. Su “Scegli una categoria” seleziona “Personale scolastico”. Nella tab opzioni -> scegli un layout -> servizio.
+Creare una voce di menu denominata “Personale scolastico” di tipo “Blog per le categorie della sezione servizi”. Su “Tipo di voce di menu” seleziona “Blog per le categorie della sezione servizi”. Su “Scegli una categoria” seleziona “Personale scolastico”. Nella tab opzioni -> scegli un layout -> servizio.
 
 ##### 1.6.4. Percorso di studio
 (Voce principale - - panoramica) <br>
-Creare una voce di menu denominata “Percorsi di studio” di tipo “Categoria blog”. Su “Tipo di voce di menu” seleziona “Categoria blog”. Su “Scegli una categoria” seleziona “Percorso di studi”. Nella tab opzioni -> scegli un layout -> servizio.
+Creare una voce di menu denominata “Percorsi di studio” di tipo “Blog per le categorie della sezione servizi”. Su “Tipo di voce di menu” seleziona “Blog per le categorie della sezione servizi”. Su “Scegli una categoria” seleziona “Percorso di studi”. Nella tab opzioni -> scegli un layout -> servizio.
 
 #### 1.7. Novità
 Creare una nuova voce di menu denominata “novità” di tipo “categoria blog”. Su scegli una categoria seleziona “novità” Nella tab opzioni -> scegli un layout -> novita Categoria -> nascondi.
