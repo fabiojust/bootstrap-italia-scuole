@@ -645,7 +645,8 @@ All’interno della tab Generale impostare i seguenti parametri:
 
 - Tipo: Testo (text) 
 - Nome: nome-sede
-> nome-sede-servizio 
+> [!WARNING]
+> Il nome dovrebbe forse essere sotituito con nome-sede-servizio in quanto Joomla non supporta i custom field con lo stesso nome
 - Etichetta: Nome 
 - Obbligatorio: Sì 
 - Usa in sottomodulo: Sì 
