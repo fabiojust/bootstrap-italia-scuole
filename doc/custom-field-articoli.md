@@ -155,6 +155,170 @@ Nella tab Opzioni impostare:
 - Layout: numeri 
 - Mostra se di sola lettura: eredita
 
+### Nome sede
+
+Creare un nuovo campo e chiamarlo esattamente così. 
+
+All’interno della tab Generale impostare i seguenti parametri: 
+
+- Tipo: Testo (text) 
+- Nome: nome-sede
+- Etichetta: Nome 
+- Obbligatorio: Sì 
+- Usa in sottomodulo: Sì 
+- Filtro: Usa impostazioni Plugin 
+- Stato: Pubblicato 
+- Gruppi di campi: Luoghi
+
+Nella tab Opzioni impostare: 
+
+- Modificabile in: entrambi 
+- Mostra etichetta: mostra 
+- Visualizza campo: dopo il contenuto del display 
+- Layout: luoghi 
+- Mostra se di sola lettura: eredita
+
+### Indirizzo
+
+Creare un nuovo campo e chiamarlo esattamente così. 
+
+All’interno della tab Generale impostare i seguenti parametri: 
+
+- Tipo: Testo (text) 
+- Nome: indirizzo 
+- Etichetta: indirizzo
+- Obbligatorio: Sì 
+- Usa in sottomodulo: Sì 
+- Filtro: Usa impostazioni Plugin 
+- Stato: Pubblicato 
+- Gruppi di campi: Luoghi
+
+Nella tab Opzioni impostare: 
+
+- Modificabile in: entrambi 
+- Mostra etichetta: mostra 
+- Visualizza campo: dopo il contenuto del display 
+- Layout: luoghi 
+- Mostra se di sola lettura: eredita
+
+### Orari
+
+Creare un nuovo campo e chiamarlo esattamente così. 
+
+All’interno della tab Generale impostare i seguenti parametri: 
+
+- Tipo: Editor (text) 
+- Nome: orari 
+- Etichetta: Nome 
+- Obbligatorio: Sì 
+- Usa in sottomodulo: Sì 
+- Mostra pulsanti: No 
+- Nascondi pulsanti: Pulsante - Articolo Pulsante - Contatto Pulsante - Campo Pulsante - Immagine Pulsante - Menu Pulsante - Modulo Button - Pagebreak Pulsante - Leggi tutto 
+- Filtro: HTML sicuro 
+- Stato: Pubblicato 
+- Gruppi di campi: Luoghi
+
+Nella tab Opzioni impostare: 
+
+- Modificabile in: entrambi 
+- Mostra etichetta: mostra 
+- Visualizza campo: dopo il contenuto del display 
+- Layout: luoghi 
+- Mostra se di sola lettura: eredita
+
+### Gps
+
+Creare un nuovo campo e chiamarlo esattamente così. 
+
+All’interno della tab Generale impostare i seguenti parametri: 
+
+- Tipo: Editor (text) 
+- Nome: gps 
+- Etichetta: Gps 
+- Obbligatorio: Sì 
+- Usa in sottomodulo: Sì 
+- Filtro: Usa impostazioni Plugin 
+- Stato: Pubblicato 
+- Gruppi di campi: Luoghi
+
+Nella tab Opzioni impostare: 
+
+- Modificabile in: entrambi 
+- Mostra etichetta: mostra 
+- Visualizza campo: dopo il contenuto del display 
+- Layout: luoghi 
+- Mostra se di sola lettura: eredita
+
+### Email
+
+Creare un nuovo campo e chiamarlo esattamente così. 
+
+All’interno della tab Generale impostare i seguenti parametri: 
+
+- Tipo: Testo (text) 
+- Nome: email 
+- Etichetta: Email 
+- Obbligatorio: Sì 
+- Usa in sottomodulo: Sì 
+- Filtro: Usa impostazioni Plugin 
+- Stato: Pubblicato 
+- Gruppi di campi: Luoghi
+
+Nella tab Opzioni impostare: 
+
+- Modificabile in: entrambi 
+- Mostra etichetta: mostra 
+- Visualizza campo: dopo il contenuto del display 
+- Layout: luoghi 
+- Mostra se di sola lettura: eredita
+
+### PEC
+
+Creare un nuovo campo e chiamarlo esattamente così. 
+
+All’interno della tab Generale impostare i seguenti parametri: 
+
+- Tipo: Testo (text) 
+- Nome: pec 
+- Etichetta: PEC 
+- Obbligatorio: Sì 
+- Usa in sottomodulo: Sì 
+- Filtro: Usa impostazioni Plugin 
+- Stato: Pubblicato 
+- Gruppi di campi: Luoghi
+
+Nella tab Opzioni impostare: 
+
+- Modificabile in: entrambi 
+- Mostra etichetta: mostra 
+- Visualizza campo: dopo il contenuto del display 
+- Layout: luoghi 
+- Mostra se di sola lettura: eredita
+
+### Telefono
+
+Creare un nuovo campo e chiamarlo esattamente così. 
+
+All’interno della tab Generale impostare i seguenti parametri: 
+
+- Tipo: Testo (text) 
+- Nome: telefono 
+- Etichetta: Telefono 
+- Obbligatorio: Sì 
+- Usa in sottomodulo: Sì 
+- Filtro: Usa impostazioni Plugin 
+- Stato: Pubblicato 
+- Gruppi di campi: Luoghi
+
+Nella tab Opzioni impostare: 
+
+- Modificabile in: entrambi 
+- Mostra etichetta: mostra 
+- Visualizza campo: dopo il contenuto del display 
+- Layout: luoghi 
+- Mostra se di sola lettura: eredita
+
+
 ### Dove si trova
 
 Creare un nuovo campo e chiamarlo esattamente così. 
@@ -184,7 +348,7 @@ Nella tab Opzioni impostare:
 
 Layout di tipo Card per il campo gruppi Luoghi.
 
-### DModalità di accesso
+### Modalità di accesso
 Creare un nuovo campo e chiamarlo "Modalità di accesso"
 
 All’interno della tab Generale impostare i seguenti parametri:
@@ -637,185 +801,6 @@ Nella tab Opzioni impostare:
 - Layout: usa predefinito 
 - Mostra se di sola lettura: eredita
 
-### Nome sede
-
-Creare un nuovo campo e chiamarlo esattamente così. 
-
-All’interno della tab Generale impostare i seguenti parametri: 
-
-- Tipo: Testo (text) 
-- Nome: nome-sede
-> [!WARNING]
-> Il nome dovrebbe forse essere sotituito con nome-sede-servizio in quanto Joomla non supporta i custom field con lo stesso nome
-- Etichetta: Nome 
-- Obbligatorio: Sì 
-- Usa in sottomodulo: Sì 
-- Filtro: Usa impostazioni Plugin 
-- Stato: Pubblicato 
-- Gruppi di campi: Servizi
-
-![custom-field-nome-sede](https://jit.protocollicreativi.it/templates/joomla-italia-theme/doc/img/custom-field-nome-sede.png)
-
-Nella tab Opzioni impostare: 
-
-- Modificabile in: entrambi 
-- Mostra etichetta: mostra 
-- Visualizza campo: dopo il contenuto del display 
-- Layout: luoghi 
-- Mostra se di sola lettura: eredita
-
-### Indirizzo
-
-Creare un nuovo campo e chiamarlo esattamente così. 
-
-All’interno della tab Generale impostare i seguenti parametri: 
-
-- Tipo: Testo (text) 
-- Nome: indirizzo 
-- Etichetta: indirizzo
-- Obbligatorio: Sì 
-- Usa in sottomodulo: Sì 
-- Filtro: Usa impostazioni Plugin 
-- Stato: Pubblicato 
-- Gruppi di campi: Servizi
-
-![custom-field-indirizzo](https://jit.protocollicreativi.it/templates/joomla-italia-theme/doc/img/custom-field-indirizzo.png)
-
-Nella tab Opzioni impostare: 
-
-- Modificabile in: entrambi 
-- Mostra etichetta: mostra 
-- Visualizza campo: dopo il contenuto del display 
-- Layout: luoghi 
-- Mostra se di sola lettura: eredita
-
-### Orari
-
-Creare un nuovo campo e chiamarlo esattamente così. 
-
-All’interno della tab Generale impostare i seguenti parametri: 
-
-- Tipo: Editor (text) 
-- Nome: orari 
-- Etichetta: Nome 
-- Obbligatorio: Sì 
-- Usa in sottomodulo: Sì 
-- Mostra pulsanti: No 
-- Nascondi pulsanti: Pulsante - Articolo Pulsante - Contatto Pulsante - Campo Pulsante - Immagine Pulsante - Menu Pulsante - Modulo Button - Pagebreak Pulsante - Leggi tutto 
-- Filtro: Usa impostazioni Plugin 
-- Stato: Pubblicato 
-- Gruppi di campi: Servizi
-
-![custom-field-orari](https://jit.protocollicreativi.it/templates/joomla-italia-theme/doc/img/custom-field-orari.png)
-
-Nella tab Opzioni impostare: 
-
-- Modificabile in: entrambi 
-- Mostra etichetta: mostra 
-- Visualizza campo: dopo il contenuto del display 
-- Layout: luoghi 
-- Mostra se di sola lettura: eredita
-
-### Gps
-
-Creare un nuovo campo e chiamarlo esattamente così. 
-
-All’interno della tab Generale impostare i seguenti parametri: 
-
-- Tipo: Editor (text) 
-- Nome: gps 
-- Etichetta: Gps 
-- Obbligatorio: Sì 
-- Usa in sottomodulo: Sì 
-- Filtro: Usa impostazioni Plugin 
-- Stato: Pubblicato 
-- Gruppi di campi: Servizi
-
-![custom-field-gps](https://jit.protocollicreativi.it/templates/joomla-italia-theme/doc/img/custom-field-gps.png)
-
-Nella tab Opzioni impostare: 
-
-- Modificabile in: entrambi 
-- Mostra etichetta: mostra 
-- Visualizza campo: dopo il contenuto del display 
-- Layout: luoghi 
-- Mostra se di sola lettura: eredita
-
-### Email
-
-Creare un nuovo campo e chiamarlo esattamente così. 
-
-All’interno della tab Generale impostare i seguenti parametri: 
-
-- Tipo: Testo (text) 
-- Nome: email 
-- Etichetta: Email 
-- Obbligatorio: Sì 
-- Usa in sottomodulo: Sì 
-- Filtro: Usa impostazioni Plugin 
-- Stato: Pubblicato 
-- Gruppi di campi: Servizi
-
-![custom-field-email](https://jit.protocollicreativi.it/templates/joomla-italia-theme/doc/img/custom-field-email.png)
-
-Nella tab Opzioni impostare: 
-
-- Modificabile in: entrambi 
-- Mostra etichetta: mostra 
-- Visualizza campo: dopo il contenuto del display 
-- Layout: luoghi 
-- Mostra se di sola lettura: eredita
-
-### PEC
-
-Creare un nuovo campo e chiamarlo esattamente così. 
-
-All’interno della tab Generale impostare i seguenti parametri: 
-
-- Tipo: Testo (text) 
-- Nome: pec 
-- Etichetta: PEC 
-- Obbligatorio: Sì 
-- Usa in sottomodulo: Sì 
-- Filtro: Usa impostazioni Plugin 
-- Stato: Pubblicato 
-- Gruppi di campi: Servizi
-
-![custom-field-pec](https://jit.protocollicreativi.it/templates/joomla-italia-theme/doc/img/custom-field-pec.png)
-
-Nella tab Opzioni impostare: 
-
-- Modificabile in: entrambi 
-- Mostra etichetta: mostra 
-- Visualizza campo: dopo il contenuto del display 
-- Layout: luoghi 
-- Mostra se di sola lettura: eredita
-
-### Telefono
-
-Creare un nuovo campo e chiamarlo esattamente così. 
-
-All’interno della tab Generale impostare i seguenti parametri: 
-
-- Tipo: Testo (text) 
-- Nome: telefono 
-- Etichetta: Telefono 
-- Obbligatorio: Sì 
-- Usa in sottomodulo: Sì 
-- Filtro: Usa impostazioni Plugin 
-- Stato: Pubblicato 
-- Gruppi di campi: Servizi
-
-![custom-field-telefono](https://jit.protocollicreativi.it/templates/joomla-italia-theme/doc/img/custom-field-telefono.png)
-
-Nella tab Opzioni impostare: 
-
-- Modificabile in: entrambi 
-- Mostra etichetta: mostra 
-- Visualizza campo: dopo il contenuto del display 
-- Layout: luoghi 
-- Mostra se di sola lettura: eredita
-
 ### Luoghi in cui viene erogato il servizio
 
 Creare un nuovo campo e chiamarlo esattamente così. 
@@ -856,7 +841,7 @@ Nella tab Opzioni impostare:
 Per poter selezionare nell’articolo del servizio uno o più servizi correlati è necessario creare una campo di tipo custom field. 
 
 - Tipo: SQL (sql) 
-- Nome: test-articoli 
+- Nome: servizi-correlati
 - Etichetta: Servizi correlati 
 - Obbligatorio: No 
 - Usa in solo sotto modulo: No
@@ -894,7 +879,7 @@ All’interno della tab Generale impostare i seguenti parametri:
 - Etichetta: Cosa serve 
 - Obbligatorio: Sì 
 - Usa in sottomodulo: Sì 
-- Filtro: Testo 
+- Filtro: HTML sicuro 
 - Stato: Pubblicato 
 - Gruppi di campi: Servizi
 
