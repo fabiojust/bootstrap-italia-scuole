@@ -164,17 +164,26 @@ $authorisedViewLevels = $user->getAuthorisedViewLevels();
                                 </div>
                                 <h2 class="h6 text-uppercase"><strong>Tipologia</strong></h2>
                                 <?php
-                                    // Mostro le categorie che hanno la stessa categoria parent
-                                    $db = Factory::getContainer()->get('DatabaseDriver');
-            $query = $db->getQuery(true);
+                                // Recupera l'utente corrente e i suoi livelli di accesso autorizzati
+                                $user = Factory::getUser();
+                                $authorisedViewLevels = $user->getAuthorisedViewLevels();
 
-            $query->select($db->quoteName(array('title', 'id','language')))
-                ->from($db->quoteName('#__categories'))
-                ->where($db->quoteName('parent_id') . ' = '. $this->category->parent_id)
-                ->where($db->quoteName('extension') . ' = ' . $db->quote('com_content'));
-            $db->setQuery($query);
-            $rows = $db->loadObjectList();
-            ?>
+                                $db = Factory::getContainer()->get('DatabaseDriver');
+                                $query = $db->getQuery(true);
+
+                                // Seleziona le categorie che hanno la stessa categoria parent
+                                $query->select($db->quoteName(['title', 'id', 'language']))
+                                ->from($db->quoteName('#__categories'))
+                                ->where($db->quoteName('parent_id') . ' = ' . (int) $this->category->parent_id)
+                                ->where($db->quoteName('extension') . ' = ' . $db->quote('com_content'))
+                                // CONTROLLO 1: Aggiungi la condizione per le categorie pubblicate
+                                ->where($db->quoteName('published') . ' = 1')
+                                // CONTROLLO 2: Aggiungi la condizione per i livelli di accesso dell'utente
+                                ->where($db->quoteName('access') . ' IN (' . implode(',', $authorisedViewLevels) . ')');
+
+                                $db->setQuery($query);
+                                $rows = $db->loadObjectList();
+                                ?>
 
                                 <ul class="">
                                     <?php foreach ($rows as $row) : ?>
