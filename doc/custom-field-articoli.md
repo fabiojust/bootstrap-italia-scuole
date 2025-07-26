@@ -52,8 +52,15 @@ All’interno della tab Generale impostare i seguenti parametri:
 
 Nel campo **“Query”** inserire la seguente stringa di testo 
 
-SELECT content.id as 'value', content.title as 'text' FROM #__content content INNER JOIN #__categories categorie ON content.catid = categorie.id   WHERE categorie.parent_id = 24
-
+```
+(SELECT '' AS value, '– Seleziona un\'opzione –' AS text, 0 AS ordering)
+UNION ALL
+(SELECT content.id AS value, content.title AS text, 1 AS ordering
+ FROM #__content AS content
+ INNER JOIN #__categories AS categorie ON content.catid = categorie.id
+ WHERE categorie.parent_id = 24)
+ORDER BY ordering, text
+```
 Andando a sostituire il numero 24 riportato nell’esempio con l’id della categoria “Servizi” creata precedentemente. Per visualizzare l’id è sufficiente andare in Contenuto -> Categorie e nella lista di tutte le categorie presenti individuare “Servizi”. Sulla destra è presente l’ID quindi il numero da sostituire al posto del 24.
 
 - Valori multipli: Sì 
