@@ -45,6 +45,10 @@ $catactive =  $this->category->title;
 
 $baseImagePath = Uri::root(false) . "media/templates/site/joomla-italia-theme/images/";
 
+// controllo pubblicazione categorie
+$user = Factory::getUser();
+$authorisedViewLevels = $user->getAuthorisedViewLevels();
+
 ?>
 
 <div class="blogj4a blog-category" itemscope itemtype="https://schema.org/Blog">
@@ -99,6 +103,13 @@ $baseImagePath = Uri::root(false) . "media/templates/site/joomla-italia-theme/im
         <?php if ($this->children[$this->category->id]) : ?>
             <div class="wrapper-subcategorie">
                 <?php foreach ($this->children[$this->category->id] as $kategorie) : ?>
+                <?php
+                // CONTROLLO: Salta la sottocategoria se non è pubblicata o se l'utente non ha i permessi di accesso.
+                if (!$kategorie->published || !in_array($kategorie->access, $authorisedViewLevels)) {
+                    continue; // Passa alla prossima iterazione del ciclo
+                }
+                ?>
+
                     <section class="py-5">
                         <div class="container">
                             <div class="title-section mb-5">
