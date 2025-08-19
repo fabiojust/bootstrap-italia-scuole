@@ -32,7 +32,7 @@ if ($value == '') {
 ?>
 
 <div class="card card-bg card-servizio purplelight rounded mb-3">
-    <div class="card-body pb-0">
+    <div class="card-body">
         <?php if ($showLabel == 1) : ?>
             <span class="field-label <?php echo $labelClass; ?>"><?php echo htmlentities($label, ENT_QUOTES | ENT_IGNORE, 'UTF-8'); ?>: </span>
         <?php endif; ?>
