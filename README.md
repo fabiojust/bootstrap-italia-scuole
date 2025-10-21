@@ -1,15 +1,13 @@
-# ![pcrt](https://avatars.githubusercontent.com/u/44270932?v=4 "pcrt") Protocolli Creativi
-## Tema Joomla per la Scuola
+## Tema Joomla per la Scuola italiana
+Basato su **Joomla Italia Theme**, un tema di Joomla utilizzabile per i **siti internet** della Scuola italiana sviluppato dalla [Protocolli Creativi srl](https://www.protocollicreativi.it). Questo tema riprende la struttura del progetto originale con l'aggionramento della libreria bootstrap e alcune migliorie.
 
-**Joomla Italia Theme** è un tema di Joomla utilizzabile per i **siti internet** della Scuola italiana. Ed è stato sviluppato dalla [Protocolli Creativi srl](https://www.protocollicreativi.it)
-
-Joomla Italia Theme è il tema Joomla che permette di aderire al [modello di sito istituzionale delle scuole](https://designers.italia.it/modello/scuole/).
+Bootstrap Italia Scuole è il tema Joomla che permette di aderire al [modello di sito istituzionale delle scuole](https://designers.italia.it/modello/scuole/).
 
 Nel tema vengono integrate le componenti di [**Bootstrap Italia**](https://italia.github.io/bootstrap-italia/).
 
-Joomla Italia Theme è sviluppato per [**Joomla 4**](https://www.joomla.org/) (CMS open-source), su framework [**Bootstrap 5**](https://getbootstrap.com/). 
+Bootstrap Italia Scuole è sviluppato per [**Joomla 5**](https://www.joomla.org/) (CMS open-source), su framework [**Bootstrap 5**](https://getbootstrap.com/). 
 
-Joomla Italia Theme propone una **soluzione open-source e gratuita**, ideale per istituti scolastici che hanno scelto di utilizzare Joomla per il proprio sito intenet.
+Bootstrap Italia Scuole propone una **soluzione open-source e gratuita**, ideale per istituti scolastici che hanno scelto di utilizzare Joomla per il proprio sito intenet.
 
 ## **Indice**
 
@@ -23,7 +21,7 @@ Joomla Italia Theme propone una **soluzione open-source e gratuita**, ideale per
 - [Documentazione](#documentazione)
 
 ### **Cos'è**
-Il tema Joomla Italia Theme è un’applicazione per Joomla, il sistema di gestione di contenuti (CMS) che consente di creare un sito web. 
+Il tema Bootstrap Italia Theme è un’applicazione per Joomla, il sistema di gestione di contenuti (CMS) che consente di creare un sito web. 
 
 Il tema è basato sul [modello di sito istituzionale delle scuole italiane](https://designers.italia.it/modello/scuole/), creato nell’ambito del progetto Designers Italia dal Dipartimento per la trasformazione digitale e il Ministero dell’Istruzione.
 
@@ -51,7 +49,7 @@ Scopri i canali della community dove confrontarti sulle risorse del modello:
 L’uso del tema non impatta le modalità con cui viene abitualmente gestito il sito scolastico e rimane una responsabilità degli istituti. Molti istituti fanno affidamento su fornitori esterni per hosting e manutenzione. Se vuoi puoi contattare lo sviluppatore del tema Protocolli Creativi, che può offire consulenza a pagamento per la configurazione e la manutenzione del sito.
 ➔	**Perché esiste un tema anche per Joomla?**
 
-Joomla è il secondo CMS più usato dalle scuole. Se il tuo istituto utilizza Joomla questo Joomla Italia Theme è il template giusto.
+Joomla è il secondo CMS più usato dalle scuole. Se il tuo istituto utilizza Joomla questo Bootstrap Italia Theme è il template giusto.
 
 ➔	**Quali sono i benefici dell’uso del tema Joomla?**
 
@@ -77,7 +75,7 @@ Design Scuole Italia rispetta le nuove linee guida di design dell’Agenzia per 
 Nel tema vengono integrate le componenti di [**Bootstrap Italia**](https://italia.github.io/bootstrap-italia/).
 
 ## Licenze software dei componenti di terze parti
-Il template Joomla Italia Theme è stato realizzato sfruttando solo il CORE di Joomla.
+Il template Bootstrap Italia Theme è stato realizzato sfruttando solo il CORE di Joomla.
 
 Di seguito elencati i componenti distribuiti (derivati dal template html utilizzato per realizzare il tema: https://github.com/italia/design-scuole-pagine-statiche), che hanno una propria licenza diversa da CC0:
 
@@ -105,10 +103,10 @@ Vuoi segnalare un bug o fare una richiesta?
 Prima di tutto assicurati che sia un problema relativo al tema Joomla e non a plugin che hai installato nel tuo sito o impostazioni del CMS, se lo ritieni necessario, apri la issue in questo repository.
 
 ### **Documentazione**
-In questo momento stiamo lavorando per fornirti la documentazione del tema. Presto rilasceremo in questo file tutte le istruzioni necessarie per la configurazione di Joomla Italia Theme.
+In questo momento stiamo lavorando per fornirti la documentazione del tema. Presto rilasceremo in questo file tutte le istruzioni necessarie per la configurazione di Bootstrap Italia Theme.
 
 ## Configurazione del template
-Il template Joomla Italia Theme ha al suo interno diverse impostazioni accessibili direttamente dal pannello di amministrazione di Joomla. Da qui è possibile gestire gli elementi presenti nella top bar, nell'header il carosello in home page, il footer. Per poter accedere a queste impostazioni sarà necessario dal pannello di controllo Sistema > Stili template > Joomla-Italia-Theme.
+Il template Bootstrap Italia Theme ha al suo interno diverse impostazioni accessibili direttamente dal pannello di amministrazione di Joomla. Da qui è possibile gestire gli elementi presenti nella top bar, nell'header il carosello in home page, il footer. Per poter accedere a queste impostazioni sarà necessario dal pannello di controllo Sistema > Stili template > Joomla-Italia-Theme.
 
 
 [**Vai alla Documentazione**](doc/doc.md)
