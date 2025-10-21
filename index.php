@@ -1,4 +1,4 @@
-<?php
+ <?php
 
 defined('_JEXEC') or die;
 
@@ -14,29 +14,33 @@ $menu = $app->getMenu()->getActive();
 $isHomePage = ($menu->home);
 $credits = '<a href="https://www.protocollicreativi.it" target="_blank" rel="nofollow" title="Protocolli Creativi is a Joomla Provider">Made with love Joomla Italia Theme by Protocolli Creativi</a>';
 $pageclass = $menu !== null ? $menu->getParams()->get('pageclass_sfx', '') : '';
+$templateParams = $this->params;  // carica i parametri impostati nel 
 
 $baseImagePath = Uri::root(false).'media/templates/site/'.$this->template.'/images/';
 
 $this->setMetaData('viewport', 'width=device-width, initial-scale=1, minimum-scale=1');
-$this->setMetaData('theme-color', '#ffffff');
+$this->setMetaData('theme-color', '#000000');
+
 
 // Browsers support SVG favicons
-$this->addHeadLink(HTMLHelper::_('image', 'joomla-favicon.svg', '', [], true, 1), 'icon', 'rel', ['type' => 'image/svg+xml']);
-$this->addHeadLink(HTMLHelper::_('image', 'favicon.ico', '', [], true, 1), 'alternate icon', 'rel', ['type' => 'image/vnd.microsoft.icon']);
-$this->addHeadLink(HTMLHelper::_('image', 'joomla-favicon-pinned.svg', '', [], true, 1), 'mask-icon', 'rel', ['color' => '#000']);
+// $this->addHeadLink(HTMLHelper::_('image', 'joomla-favicon.svg', '', [], true, 1), 'icon', 'rel', ['type' => 'image/svg+xml']);
+// $this->addHeadLink(HTMLHelper::_('image', 'favicon.ico', '', [], true, 1), 'alternate icon', 'rel', ['type' => 'image/vnd.microsoft.icon']);
+// $this->addHeadLink(HTMLHelper::_('image', 'joomla-favicon-pinned.svg', '', [], true, 1), 'mask-icon', 'rel', ['color' => '#000']);
 
-$wa->usePreset('template.joomla-italia-theme')
+$wa->usePreset('template.bootstrap-italia-scuole')
      ->useStyle('css.fontawesome')
      ->useStyle('css.fonts')
-     ->useStyle('template.css.pcrt-main')
-     ->useStyle('template.css.pcrt-menu')
-     ->useStyle('template.css.pcrt-jit')
+     ->useStyle('template.css.scuole-main')
+     ->useStyle('template.css.scuole-menu')
+     ->useStyle('template.css.scuole-jit')
      ->useStyle('css.table')
      ->useStyle('carousel')
      ->useStyle('carousel.theme')
+       ->useStyle('template.css.custom')
      ->useScript('template.js.jquery362')
      ->useScript('template.js.carousel')
      ->useScript('template.js.jti')
+  
      ->addInlineScript(
          "
 		 window.addEventListener('load', function(event) {
@@ -71,12 +75,135 @@ $wa->usePreset('template.joomla-italia-theme')
 
 ?>
 
+
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?= $this->language; ?>" lang="<?= $this->language; ?>" dir="<?php echo $this->direction; ?>">
 <head>
+    <link rel="apple-touch-icon" sizes="57x57" href="/images/asset/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/images/asset/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/images/asset/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/images/asset/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/images/asset/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/images/asset/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/images/asset/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/images/asset/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/asset/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="/images/asset/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/asset/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/images/asset/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/images/asset/favicon-16x16.png">
+  <link rel="icon" href="/images/asset/favicon.ico">
+<link rel="manifest" href="/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
 	<jdoc:include type="metas" />
+
+	<script src="/media/vendor/choicesjs/js/choices.min.js"></script>
+	<link rel="stylesheet" href="/media/vendor/choicesjs/css/choices.min.css">
+
+
 	<jdoc:include type="styles" />
-	<jdoc:include type="scripts" />
+	<link href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template ?>/css/custom-scuole.css?v=3" rel="stylesheet" type="text/css" />
+
+    <link href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template ?>/css/custom.css?v=8" rel="stylesheet" type="text/css" />
+      <link href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template ?>/css/custom-colors.css?=v10" rel="stylesheet" type="text/css" />
+     	<jdoc:include type="scripts" />
+
+  <?php   	$wa->registerAndUseScript('choices', 'media/vendor/choicesjs/js/choices.min.js', [], ['defer' => true]);
+        $wa->registerAndUseStyle('choices', 'media/vendor/choicesjs/css/choices.min.css');  ?>
+
+
+ <style>
+:root {
+<?php
+// Funzione: converte HEX → HSL
+function hexToHsl($hex) {
+    $hex = ltrim($hex, '#');
+    if (strlen($hex) === 3) {
+        $r = hexdec(str_repeat(substr($hex, 0, 1), 2));
+        $g = hexdec(str_repeat(substr($hex, 1, 1), 2));
+        $b = hexdec(str_repeat(substr($hex, 2, 1), 2));
+    } else {
+        $r = hexdec(substr($hex, 0, 2));
+        $g = hexdec(substr($hex, 2, 2));
+        $b = hexdec(substr($hex, 4, 2));
+    }
+    $r /= 255; $g /= 255; $b /= 255;
+    $max = max($r, $g, $b);
+    $min = min($r, $g, $b);
+    $l = ($max + $min) / 2;
+    if ($max === $min) {
+        $h = $s = 0;
+    } else {
+        $d = $max - $min;
+        $s = $l > 0.5 ? $d / (2 - $max - $min) : $d / ($max + $min);
+        switch ($max) {
+            case $r: $h = ($g - $b) / $d + ($g < $b ? 6 : 0); break;
+            case $g: $h = ($b - $r) / $d + 2; break;
+            case $b: $h = ($r - $g) / $d + 4; break;
+        }
+        $h /= 6;
+    }
+    $h = round($h * 360);
+    $s = round($s * 100);
+    $l = round($l * 100);
+    return "{$h}deg, {$s}%, {$l}%";
+}
+
+// Funzione: converte HEX → RGB
+function hexToRgb($hex) {
+    $hex = ltrim($hex, '#');
+    if (strlen($hex) === 3) {
+        $r = hexdec(str_repeat(substr($hex, 0, 1), 2));
+        $g = hexdec(str_repeat(substr($hex, 1, 1), 2));
+        $b = hexdec(str_repeat(substr($hex, 2, 1), 2));
+    } else {
+        $r = hexdec(substr($hex, 0, 2));
+        $g = hexdec(substr($hex, 2, 2));
+        $b = hexdec(substr($hex, 4, 2));
+    }
+    return "$r, $g, $b";
+}
+
+$colors = [
+  'primary'   => $templateParams->get('color_primary', '#0066cc'),
+  'secondary' => $templateParams->get('color_secondary', '#5c6f82'),
+  'success'   => $templateParams->get('color_success', '#008758'),
+  'danger'    => $templateParams->get('color_danger', '#d9364f'),
+  'warning'   => $templateParams->get('color_warning', '#ffb600'),
+  'info'      => $templateParams->get('color_info', '#0099cc')
+];
+
+foreach ($colors as $name => $hex) {
+    $hsl = hexToHsl($hex);
+    $rgb = hexToRgb($hex);
+    echo "  --color-{$name}: hsl({$hsl});\n";
+    echo "  --color-{$name}-rgb: {$rgb};\n";
+}
+?>
+
+  /* Compatibilità con Bootstrap Italia */
+  --bs-primary: var(--color-primary);
+  --bs-secondary: var(--color-secondary);
+  --bs-success: var(--color-success);
+  --bs-danger: var(--color-danger);
+  --bs-warning: var(--color-warning);
+  --bs-info: var(--color-info);
+  --bs-btn-bg: var(--color-primary);
+
+
+  /* Compatibilità RGB Bootstrap */
+  --bs-primary-rgb: var(--color-primary-rgb);
+  --bs-secondary-rgb: var(--color-secondary-rgb);
+  --bs-success-rgb: var(--color-success-rgb);
+  --bs-danger-rgb: var(--color-danger-rgb);
+  --bs-warning-rgb: var(--color-warning-rgb);
+  --bs-info-rgb: var(--color-info-rgb);
+}
+</style>
+
+
 </head>
 <body class="<?= $pageclass ? htmlspecialchars($pageclass) : ''; ?>">
 <header
@@ -96,6 +223,7 @@ $wa->usePreset('template.joomla-italia-theme')
             <?php endif; ?>
             <div class="it-header-slim-right-zone">
               <jdoc:include type="modules" name="lingua" style="none" />
+              <jdoc:include type="modules" name="avatar" style="none" />
               <?php if ($this->params->get('showBtnTopbar')) : ?>
                     	<?php
                            $fieldValues = $this->params->get('showBtnTopbarFields');
@@ -288,18 +416,16 @@ $wa->usePreset('template.joomla-italia-theme')
   </div>
   <div class="copyright mt-3 py-4 mt-lg-5">
     <div class="container text-center">
-    <?php if ($this->params->get('showCopyright')) : ?>
-        <p><?= htmlspecialchars($this->params->get('descCopyright')); ?></p>
-    <?php endif ?>
+        <jdoc:include type="modules" name="copyrightcustom" style="footer" />
     </div>
   </div>
-  <div class="container py-4">
+<!--  <div class="container py-4">
     <div class="row">
       <div class="col-lg-10 offset-lg-1 text-right footer-credits">
         <?= $credits ?>
       </div>
     </div>
-  </div>
+  </div>  -->
 </footer>
 
 

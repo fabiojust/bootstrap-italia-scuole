@@ -39,7 +39,7 @@ $baseImagePath= Uri::root(false) . "media/templates/site/joomla-italia-theme/ima
 
 ?>
 
-    <article class="card card-bg card-article card-article-purplelight">
+    <article class="card card-bg card-article card-article-petrol">
         <div class="card-body">
             <div class="card-article-img d-none d-lg-block">
                 <?php if ($introimg->image_intro =='') {

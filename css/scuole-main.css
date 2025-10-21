@@ -6,14 +6,13 @@ html{
 
 body{
     font-family: 'Titillium Web';
-    /*color: #101D35;*/
+
     overflow-x: hidden;
     font-weight: 300;
     color: #455b71;
 }
 
 h1, .h2, .h3, .h4, h1, h2, h3, h4{
-    /*color:#17324d;*/
     font-weight: 600;
 }
 h1 a, h2 a, h3 a, h4 a{
@@ -47,7 +46,7 @@ a{
 
 a:hover{
     text-decoration: underline;
-    color:#004080;
+    color:var(--color-primary);
 }
 
 .wrapperbreadcrumbs{
@@ -81,7 +80,7 @@ a:hover{
 }
 
 .link-list-wrapper ul li a:hover span{
-    color: #004080!important;
+    color: var(--color-primary)!important;
 }
 @media(max-width:991px){
     .container {
@@ -115,7 +114,7 @@ a:hover{
     }
 }
 .it-header-slim-wrapper{
-    background:#003183;
+    background: var(--bs-primary);
 }
 
 .it-header-center-wrapper .it-header-center-content-wrapper .it-right-zone .it-socials ul .icon,
@@ -183,8 +182,8 @@ ul.menucerca li{
 
 .custom-control-submit, .custom-control-submit:focus, .custom-control-submit:hover{
     padding: 7px 20px 7px 20px;
-    border: 2px solid #0066cc;
-    color: #0066cc;
+    border: 2px solid var(--bs-primary);
+    color: var(--bs-primary);
     border-radius: 4px;
     line-height: 1;
     font-weight: 600;
@@ -317,7 +316,7 @@ ul.menucerca li{
 
 
 .footersito{
-    background: #003183;
+    background: var(--bs-primary);
     color: #fff;
     position: relative;
     padding-top: 60px;
@@ -670,6 +669,20 @@ a.bg-bluelectric:focus,a.bg-bluelectric:hover,button.bg-bluelectric:focus,button
 .purple-oval-forms svg {
     width: 578px;
     height: 359px
+}
+
+.petrol-oval-forms {
+  width: 578px;
+  height: 359px;
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  right: 40px;
+}
+
+.petrol-oval-forms svg {
+  width: 578px;
+  height: 359px;
 }
 
 .people-red-forms {
@@ -1411,7 +1424,7 @@ a.view-all{
 }
 
 .com-content-category__table th a{
-    color:#06c;
+    color:var(--bs-primary);
 }
 
 .com-content-category__table thead th a{

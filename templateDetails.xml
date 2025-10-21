@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <extension type="template" client="site" method="upgrade">
-	<name>joomla-italia-theme</name>
+	<name>bootstrap-italia-scuole</name>
 	<creationDate>07/04/23</creationDate>
 	<author>Eddy Prosperi</author>
 	<authorEmail>info@protocollicreativi.it</authorEmail>
@@ -18,7 +18,7 @@
 		<filename>joomla.asset.json</filename>
 		<filename>templateDetails.xml</filename>
 	</files>
-	<media destination="templates/site/joomla-italia-theme" folder="media">
+	<media destination="templates/site/bootstrap-italia-scuole" folder="media">
 		<folder>css</folder>
 		<folder>js</folder>
 		<folder>fonts</folder>
@@ -52,14 +52,15 @@
 		<position>footer4</position>
 		<position>arealegale</position>
 		<position>copyright</position>
+      		<position>copyrightcustom</position>
 	</positions>
 	<config>
 		<fields name="params">
-			<fieldset name="topbarmessage" label="TPL_PCRT_TOPBAR" description="TPL_PCRT_DESCRIPTION_TOPBAR_FIELDSET">
+			<fieldset name="topbarmessage" label="Elementi topbar" description="InsInserisci qui il testo per la topbar, puoi anche inserire un link per renderlo cliccabile">
 				<field
 					name="showTopBarMessage"
 					type="radio"
-					label="TPL_PCRT_TOPBAR_LABEL"
+					label="Visualizza titolo topbar"
 					layout="joomla.form.field.radio.switcher"
 					default="0"
 					filter="integer"
@@ -71,7 +72,7 @@
 					name="topbarTitle"
 					type="text"
 					default=""
-					label="TPL_PCRT_TOPBAR_TITLE_LABEL"
+					label="Titolo topbar"
 					filter="string"
 					showon="showTopBarMessage:1"
 				/>
@@ -79,7 +80,7 @@
 					name="topbarTitleLink"
 					type="text"
 					default=""
-					label="TPL_PCRT_TOPBAR_TITLELINK_LABEL"
+					label="Link"
 					filter="string"
 					showon="showTopBarMessage:1"
 				/>
@@ -107,12 +108,13 @@
 						<field
 							name="topbarbuttontitle"
 							type="text"
-							label="TPL_PCRT_GET_IN_TOUCH_SUBNAME"
+							label="Nome"
 							/>
 						<field
 							name="topbarbuttonicon"
 							type="text"
-							label="TPL_PCRT_GET_IN_TOUCH_SUBICON"
+							label="Icona"
+							description="scegli le icone di Bootstrap Italia (es. it-user)"
 							/>
 						<field
 							name="topbarbuttonlink"
@@ -125,11 +127,11 @@
 					</form>
 				</field>
 			</fieldset>
-			<fieldset name="logo" label="TPL_PCRT_LOGO" description="TPL_PCRT_DESCRIPTION_LOGO_FIELDSET">
+			<fieldset name="logo" label="Logo" description="Inserisci qui sotto il logo del sito web.L'immagine deve essere quadrata ad esempio 82x82 pixel. È consigliato l'utilizzo di file in formato svg.">
 				<field
 					name="showLogo"
 					type="radio"
-					label="TPL_PCRT_LOGO_LABEL"
+					label="Logo"
 					layout="joomla.form.field.radio.switcher"
 					default="0"
 					filter="integer"
@@ -141,7 +143,7 @@
 				<field
 					name="imageLogo"
 					type="media"
-					label="TPL_PCRT_IMAGE_LABEL"
+					label="Carica l'immagine del logo"
 					directory="images"
 					default=""
 					showon="showLogo:1"
@@ -151,7 +153,7 @@
 					name="logoTopTitle"
 					type="text"
 					default=""
-					label="TPL_PCRT_LOGO_SOPRA_TITLE"
+					label="Sopra il titolo"
 					filter="string"
 					showon="showLogo:1"
 				/>
@@ -159,7 +161,7 @@
 					name="logoTitle"
 					type="text"
 					default=""
-					label="TPL_PCRT_LOGO_TITLE_LABEL"
+					label="Titolo Logo"
 					filter="string"
 					showon="showLogo:1"
 				/>
@@ -167,16 +169,54 @@
 					name="logoSubtitle"
 					type="text"
 					default=""
-					label="TPL_PCRT_LOGO_SUBTITLE_LABEL"
+					label="Sottotitolo Logo"
 					filter="string"
 					showon="showLogo:1"
 				/>
 			</fieldset>
-			<fieldset name="social" label="TPL_PCRT_SOCIAL_LABEL" description="TPL_PCRT_DESC_SOCIAL">
+			<fieldset name="colors" label="Colori del tema">
+            <field
+                name="color_primary"
+                type="color"
+                label="Colore Primario"
+                default="#0d6efd"
+            />
+            <field
+                name="color_secondary"
+                type="color"
+                label="Colore Secondario"
+                default="#6c757d"
+            />
+            <field
+                name="color_success"
+                type="color"
+                label="Colore Successo"
+                default="#198754"
+            />
+            <field
+                name="color_danger"
+                type="color"
+                label="Colore Errore"
+                default="#dc3545"
+            />
+            <field
+                name="color_warning"
+                type="color"
+                label="Colore Attenzione"
+                default="#ffc107"
+            />
+            <field
+                name="color_info"
+                type="color"
+                label="Colore Informazioni"
+                default="#0dcaf0"
+            />
+        </fieldset>
+			<fieldset name="social" label="Social" description="Da qui puoi inserire le icone per i social che utilizzi">
 				<field
 					name="showSocial"
 					type="radio"
-					label="TPL_PCRT_SOCIAL_LABEL_SHOW"
+					label="Mostra Link ai tuoi Social"
 					layout="joomla.form.field.radio.switcher"
 					default="0"
 					filter="integer"
@@ -187,7 +227,7 @@
 				<field
 					name="showSocialTouchFields"
 					type="subform"
-					label="TPL_PCRT_GET_IN_TOUCH"
+					label="Social link"
 					multiple="true"
 					max="10"
 					showon="showSocial:1"
@@ -196,17 +236,18 @@
 						<field
 							name="touchsubname"
 							type="text"
-							label="TPL_PCRT_GET_IN_TOUCH_SUBNAME"
+							label="Nome"
 							/>
 						<field
 							name="touchsubicon"
 							type="text"
-							label="TPL_PCRT_GET_IN_TOUCH_SUBICON"
+							label="Icona"
+							description="Usa le icone di Bootstrap Italia (es. it-facebook o it-telegram)"
 							/>
 						<field
 							name="touchsuburl"
 							type="url"
-							label="TPL_PCRT_GET_IN_TOUCH_SUBURL"
+							label="Link"
 							size="30"
 							filter="url"
 							validate="url"
@@ -214,11 +255,11 @@
 					</form>
 				</field>
 			</fieldset>
-			<fieldset name="banner" label="TPL_PCRT_BANNER_FIELDSET_LABEL" description="TPL_PCRT_BANNER_FIELDSET_DESC">
+			<fieldset name="banner" label="Slide" description="Slide principale home page, è possibile inserire fino a 10 elementi">
 				<field
 					name="showBanner"
 					type="radio"
-					label="TPL_PCRT_BANNER_LABEL"
+					label="Mostra il banner"
 					layout="joomla.form.field.radio.switcher"
 					default="0"
 					filter="integer"
@@ -248,7 +289,7 @@
 							name="bannerTopTitle"
 							type="text"
 							default=""
-							label="TPL_PCRT_BANNER_SOPRA"
+							label="Sopra il titolo"
 							filter="string"
 							showon="showBanner:1"
 						/>
@@ -256,7 +297,7 @@
 							name="bannerTitle"
 							type="text"
 							default=""
-							label="TPL_PCRT_BANNER_TITLE"
+							label="Titolo"
 							filter="string"
 							showon="showBanner:1"
 						/>
@@ -264,7 +305,7 @@
 							name="bannerDescription"
 							type="text"
 							default=""
-							label="TPL_PCRT_BANNER_TAGLINE"
+							label="Descrizione"
 							filter="string"
 							showon="showBanner:1"
 						/>
@@ -272,7 +313,7 @@
 							name="bannerButton"
 							type="text"
 							default=""
-							label="TPL_PCRT_BANNER_BUTTON"
+							label="Testo del bottone"
 							filter="string"
 							showon="showBanner:1"
 						/>
@@ -280,17 +321,17 @@
 							name="bannerUrlButton"
 							type="text"
 							default=""
-							label="TPL_PCRT_BANNER_LINK"
+							label="Link del bottone"
 							showon="showBanner:1"
 						/>
 					</form>
 				</field>
 			</fieldset>
-			<fieldset name="logofooter" label="TPL_PCRT_LOGO_FOOTER" description="TPL_PCRT_DESCRIPTION_LOGOFOOTER_FIELDSET">
+			<fieldset name="logofooter" label="Logo Footer" description="Da qui puoi inserire i loghi nel footer, Imposta Logo su si per inserire il logo della Scuola ed il nome della scuola, Imposta Logo Europa su SI, per inserire il logo dell'Unione Europea">
 				<field
 					name="showLoghiFooter"
 					type="radio"
-					label="TPL_PCRT_LOGOFOOTER_LABEL"
+					label="Logo"
 					layout="joomla.form.field.radio.switcher"
 					default="0"
 					filter="integer"
@@ -302,7 +343,7 @@
 				<field
 					name="imageLogoFooter"
 					type="media"
-					label="TPL_PCRT_IMAGE_LOGO_FOOTER_LABEL"
+					label="Immagine"
 					directory="images"
 					default=""
 					showon="showLoghiFooter:1"
@@ -312,7 +353,7 @@
 					name="logoFooterTopTitle"
 					type="text"
 					default=""
-					label="TPL_PCRT_LOGO_FOOTER_SOPRA_TITLE"
+					label="Sopra il titolo"
 					filter="string"
 					showon="showLoghiFooter:1"
 				/>
@@ -320,7 +361,7 @@
 					name="logoFooterTitle"
 					type="text"
 					default=""
-					label="TPL_PCRT_LOGO_FOOTER_TITLE_LABEL"
+					label="Titolo"
 					filter="string"
 					showon="showLoghiFooter:1"
 				/>
@@ -328,14 +369,14 @@
 					name="logoFooterSubtitle"
 					type="text"
 					default=""
-					label="TPL_PCRT_LOGO_FOOTER_SUBTITLE_LABEL"
+					label="Sottotitolo"
 					filter="string"
 					showon="showLoghiFooter:1"
 				/>
 				<field
 					name="showLogoEuropa"
 					type="radio"
-					label="TPL_PCRT_LOGO_EU_FOOTER_LABEL"
+					label="Logo Europa"
 					layout="joomla.form.field.radio.switcher"
 					default="0"
 					filter="integer"
@@ -346,7 +387,7 @@
 				<field
 					name="imageLogoEuropaFooter"
 					type="media"
-					label="TPL_PCRT_IMAGE_LOGO_FOOTER_LABEL"
+					label="Immagine"
 					directory="images"
 					default=""
 					showon="showLogoEuropa:1"
@@ -356,12 +397,12 @@
 					name="logoFooterEuropaDescrizione"
 					type="text"
 					default=""
-					label="TPL_PCRT_LOGO_EU_FOOTER_DESCRIZIONE"
+					label="Descrizione"
 					filter="string"
 					showon="showLogoEuropa:1"
 				/>
 			</fieldset>
-			<fieldset name="copyright" label="TPL_PCRT_COPYRIGHT" description="TPL_PCRT_COPYRIGHT_DESCRIPTION">
+			<fieldset name="copyright" label="Copyright" description="Da qui puoi inserire il testo relativo al copyright">
 				<field
 					name="showCopyright"
 					type="radio"

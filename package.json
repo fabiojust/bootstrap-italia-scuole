@@ -1,9 +1,9 @@
 {
-  "name": "joomla-italia-theme",
+  "name": "bootstrap-italia-scuole",
   "version": "1.0.0",
   "main": "index.js",
-  "repository": "https://github.com/fr00ller/joomla-italia-theme.git",
-  "author": "pcrt <info@protocollicreativi.it>",
+  "repository": "https://github.com/fr00ller/bootstrap-italia-scuole.git",
+  "author": "Fabio Rigoni",
   "license": "GPL",
   "dependencies": {
     "prettier": "^2.8.8"

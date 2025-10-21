@@ -43,39 +43,45 @@ $htag    = $this->params->get('show_page_heading') ? 'h2' : 'h1';
 //echo $this->category->parent_id;
 $catactive =  $this->category->title;
 
-$baseImagePath = Uri::root(false) . "media/templates/site/joomla-italia-theme/images/";
+$baseImagePath = Uri::root(false) . "media/templates/site/bootstrap-italia-scuole/images/";
 
 ?>
 
 <div class="blogj4a blog-category" itemscope itemtype="https://schema.org/Blog">
-    <section class="section bg-purplelight bg-purplegradient py-5 position-relative d-flex align-items-center overflow-hidden">
-        <div class="purple-oval-forms">
-            <svg width="100%" height="100%" viewBox="0 0 578 359" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <section class="section bg-petrol bg-petrolgradient py-5 position-relative d-flex align-items-center overflow-hidden">
+        <div class="petrol-oval-forms">
+           <svg width="100%" height="100%" viewBox="0 0 578 359" version="1.1" xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/"
+            style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
             <g id="Group-2">
-                <path id="Oval-2" d="M578,359c0,-159.61 -129.39,-289 -289,-289c-159.61,0 -289,129.39 -289,289l578,0Z" style="fill:url(#_Linear1);fill-rule:nonzero;"></path>
-                <path id="Oval-2-Copy" d="M578,0c0,159.61 -129.39,289 -289,289c-159.61,0 -289,-129.39 -289,-289l578,0Z" style="fill:url(#_Linear2);fill-rule:nonzero;"></path>
+              <path id="Oval-2" d="M578,359c0,-159.61 -129.39,-289 -289,-289c-159.61,0 -289,129.39 -289,289l578,0Z"
+                style="fill:url(#_Linear1);fill-rule:nonzero;" />
+              <path id="Oval-2-Copy" d="M578,0c0,159.61 -129.39,289 -289,289c-159.61,0 -289,-129.39 -289,-289l578,0Z"
+                style="fill:url(#_Linear2);fill-rule:nonzero;" />
             </g>
             <defs>
-                <linearGradient id="_Linear1" x1="0" y1="0" x2="1" y2="0" gradientUnits="userSpaceOnUse" gradientTransform="matrix(1.76961e-14,289,-289,1.76961e-14,289,70)">
-                <stop offset="0" style="stop-color:#610e0e;stop-opacity:1"></stop>
-                <stop offset="1" style="stop-color:#b21dd0;stop-opacity:0.61"></stop>
-                </linearGradient>
-                <linearGradient id="_Linear2" x1="0" y1="0" x2="1" y2="0" gradientUnits="userSpaceOnUse" gradientTransform="matrix(-578,-7.07846e-14,7.07846e-14,-578,578,144.5)">
-                <stop offset="0" style="stop-color:#590e61;stop-opacity:0"></stop>
-                <stop offset="1" style="stop-color:#b21dd0;stop-opacity:1"></stop>
-                </linearGradient>
+              <linearGradient id="_Linear1" x1="0" y1="0" x2="1" y2="0" gradientUnits="userSpaceOnUse"
+                gradientTransform="matrix(1.76961e-14,289,-289,1.76961e-14,289,70)">
+                <stop offset="0" style="stop-color:#314A5E;stop-opacity:1" />
+                <stop offset="1" style="stop-color:#6A9AB7;stop-opacity:0.61" />
+              </linearGradient>
+              <linearGradient id="_Linear2" x1="0" y1="0" x2="1" y2="0" gradientUnits="userSpaceOnUse"
+                gradientTransform="matrix(-578,-7.07846e-14,7.07846e-14,-578,578,144.5)">
+                <stop offset="0" style="stop-color:#233A4C;stop-opacity:0" />
+                <stop offset="1" style="stop-color:#6A9AB7;stop-opacity:1" />
+              </linearGradient>
             </defs>
-            </svg>
+          </svg>
         </div>
         <div class="container">
             <div class="row">
                 <div class="col-md-5">
                     <div class="hero-title text-left">
                         <?php if ($this->params->get('show_category_title', 1)) : ?>
-                            <h1><?php echo $this->category->title; ?></h1>
+                            <h1 class="text-white"><?php echo $this->category->title; ?></h1>
                         <?php endif; ?>
                         <?php if ($this->params->get('show_page_heading')) : ?>
-                            <h1><?php echo $this->escape($this->params->get('page_heading')); ?> </h1>
+                            <h1 class="text-white"><?php echo $this->escape($this->params->get('page_heading')); ?> </h1>
                         <?php endif; ?>
                         <?php echo $afterDisplayTitle; ?>
                         <?php if ($this->params->get('show_cat_tags', 1) && !empty($this->category->tags->itemTags)) : ?>
