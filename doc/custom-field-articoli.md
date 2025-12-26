@@ -1174,7 +1174,7 @@ Nella tab Opzioni impostare:
 
 ## Custom field Novità
 
-### Gruppo campi Servizi
+### Gruppo campi Notizie
 
 Creare un nuovo gruppo di campi denominato “Notizie”. Quindi andare in Contenuto -> Gruppi di campi -> Nuovo -> compilare il campo titolo “Notizie”.
 
