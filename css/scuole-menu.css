@@ -41,19 +41,19 @@
     }
 
     .navbar .navbar-collapsable .menu-wrapper .nav-item:first-child .dropdown-menu .link-list-wrapper ul.link-list li.nav-item.deeper > a span{
-        color: #d1344c;
+        color: var(--bs-primary);
     }
 
     .navbar .navbar-collapsable .menu-wrapper .nav-item:nth-child(2) .dropdown-menu .link-list-wrapper ul.link-list li.nav-item.deeper > a span{
-        color: #b21dd0;
+        color: var(--bs-secondary);
     }
 
     .navbar .navbar-collapsable .menu-wrapper .nav-item:nth-child(3) .dropdown-menu .link-list-wrapper ul.link-list li.nav-item.deeper > a span{
-        color: #0e865c;
+        color: var(--bs-success);
     }
 
     .navbar .navbar-collapsable .menu-wrapper .nav-item:nth-child(4) .dropdown-menu .link-list-wrapper ul.link-list li.nav-item.deeper > a span{
-        color: #0d00ff;
+        color: var(--bs-danger);
     }
 
     .it-header-center-wrapper .it-header-center-content-wrapper .it-brand-wrapper a .it-brand-tagline{
@@ -78,7 +78,7 @@
     }
 
     .navbar .dropdown-menu .link-list-wrapper ul li a span{
-        color: #455b71;   
+        color: var(--bs-warning);
     }
 
     .navbar .navbar-collapsable .menu-wrapper .nav-item .dropdown-menu .link-list-wrapper ul.link-list li.nav-item.deeper > a{
@@ -144,58 +144,58 @@
 }
 
 .custom-navbar-toggler svg {
-    fill: #455b71!important;
+    fill: var(--bs-warning)!important;
 }
 
 .navbar .navbar-collapsable .navbar-nav li.nav-item a.nav-link{
-    color: #455b71;
+    color: var(--bs-warning);
 }
 
 .navbar .navbar-collapsable .navbar-nav li a.nav-link.dropdown-toggle svg {
-    fill: #455b71;
+    fill: var(--bs-warning);
     margin-top: 3px;
 }
 
 .navbar .navbar-collapsable .navbar-nav li:first-child a.nav-link,
 .navbar .navbar-collapsable .navbar-nav li:first-child > li.nav-item.deeper a{
-    color: #d1344c;
+    color: var(--bs-primary);
 }
 
 .navbar .navbar-collapsable .navbar-nav li:first-child a.nav-link.dropdown-toggle svg {
-    fill: #d1344c;
+    fill: var(--bs-primary);
 }
 
 .navbar .navbar-collapsable .navbar-nav li.nav-item:nth-child(2) a.nav-link{
-    color: #b21dd0;
+    color: var(--bs-secondary);
 }
 
 .navbar .navbar-collapsable .navbar-nav li:nth-child(2) a.nav-link.dropdown-toggle svg {
-    fill: #b21dd0;
+    fill: var(--bs-secondary);
 }
 
 .navbar .navbar-collapsable .navbar-nav li.nav-item:nth-child(3) a.nav-link{
-    color: #0e865c;
+    color: var(--bs-success);
 }
 
 .navbar .navbar-collapsable .navbar-nav li:nth-child(3) a.nav-link.dropdown-toggle svg {
-    fill: #0e865c;
+    fill: var(--bs-success);
 }
 
 .navbar .navbar-collapsable .navbar-nav li.nav-item:nth-child(4) a.nav-link{
-    color: #0d00ff;
+    color: var(--bs-danger);
 }
 
 .navbar .navbar-collapsable .navbar-nav li:nth-child(4) a.nav-link.dropdown-toggle svg {
-    fill: #0d00ff;
+    fill: var(--bs-danger);
 }
 
 .navbar .navbar-collapsable .navbar-nav.navbar-secondary li:first-child a.nav-link, 
 .navbar .navbar-collapsable .navbar-nav.navbar-secondary li a.nav-link{
-    color: #455b71!important;
+    color: var(--bs-warning)!important;
 }
 
 .navbar .navbar-collapsable .navbar-nav.navbar-secondary li a.nav-link.dropdown-toggle svg {
-    fill: #455b71;
+    fill: var(--bs-warning);
 }
 
 .navbar .navbar-collapsable .navbar-nav.menualternativo li:first-child a.nav-link, 
@@ -207,7 +207,7 @@
 .navbar .navbar-collapsable .navbar-nav.menualternativo .menu-wrapper .nav-item:nth-child(3) .dropdown-menu .link-list-wrapper ul.link-list li.nav-item.deeper > a span,
 .navbar .navbar-collapsable .navbar-nav.menualternativo .menu-wrapper .nav-item:nth-child(4) .dropdown-menu .link-list-wrapper ul.link-list li.nav-item.deeper > a span,
 .navbar .navbar-collapsable .navbar-nav.menualternativo li.nav-item a.nav-link{
-    color: #455b71!important;
+    color: var(--bs-warning)!important;
     font-size: .9rem;
 }
 
@@ -221,5 +221,5 @@ display: none;
 .navbar .navbar-collapsable .navbar-nav.menualternativo li:nth-child(2) a.nav-link.dropdown-toggle svg,
 .navbar .navbar-collapsable .navbar-nav.menualternativo li:nth-child(3) a.nav-link.dropdown-toggle svg, 
 .navbar .navbar-collapsable .navbar-nav.menualternativo li:nth-child(4) a.nav-link.dropdown-toggle svg {
-    fill: #455b71!important;
+    fill: var(--bs-warning)!important;
 }

@@ -201,7 +201,9 @@ ul.menucerca li{
     top:70px!important;
 }
 
-
+.it-header-center-wrapper .it-header-center-content-wrapper .it-brand-wrapper a .icon {
+    width: auto;
+}
 /*SLIDE BANNER HOME*/
 
 
