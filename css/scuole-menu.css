@@ -11,7 +11,7 @@
 
     .navbar .navbar-collapsable .navbar-nav li a.nav-link{
         padding: 13px 18px;
-        font-weight: 600;
+        font-weight: 600 !important;
         font-size: 1.03rem;
     }
 
@@ -26,7 +26,7 @@
     .navbar .navbar-collapsable .menu-wrapper .nav-item .dropdown-menu .link-list-wrapper ul.link-list li.nav-item.deeper > a {
         border-bottom: 1px solid #ddd;
         padding: 1em 0;
-        font-weight: 600;
+        font-weight: 600 !important;
     }
 
     .navbar .navbar-collapsable .navbar-nav li a.list-item {
@@ -82,7 +82,7 @@
     }
 
     .navbar .navbar-collapsable .menu-wrapper .nav-item .dropdown-menu .link-list-wrapper ul.link-list li.nav-item.deeper > a{
-        font-weight: 600;
+        font-weight: 600 !important;
         border-bottom: 1px solid #e5e5e5;
     }
 
@@ -223,3 +223,11 @@ display: none;
 .navbar .navbar-collapsable .navbar-nav.menualternativo li:nth-child(4) a.nav-link.dropdown-toggle svg {
     fill: var(--bs-warning)!important;
 }
+
+:focus:not(.focus--mouse), .form-check [type="checkbox"]:focus + label, .form-check [type="radio"]:focus + label, .toggles label input[type="checkbox"]:focus + .lever {
+  border-color: var(--bs-primary) !important;
+  box-shadow: none!important;
+}
+
+
+

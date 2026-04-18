@@ -37,12 +37,11 @@ $isExpired         = !is_null($this->item->publish_down) && $this->item->publish
 
 $fullimg = json_decode($this->item->images);
 
-$pubblicazione = $this->item->publish_up;
-$pubblicazione = Factory::getDate()->format('d.m.Y');
+// Data di pubblicazione
+$pubblicazione = Factory::getDate($this->item->publish_up)->format('d.m.Y');
 
-$revisione = $this->item->modified;
-$revisione = Factory::getDate()->format('d.m.Y');
-;
+// Data di revisione
+$revisione = Factory::getDate($this->item->modified)->format('d.m.Y');
 
 $urlcompleto = Uri::getInstance();
 
@@ -63,24 +62,31 @@ $baseImagePath = Uri::root(false) . "media/templates/site/joomla-italia-theme/im
         </div>
     <?php endif; ?>
     <div class="container">
-        <div class="row align-items-center">
-            <div class="col-md-5">
-                <div class="hero-title">
-                    <h1><?php echo $this->escape($this->item->title); ?></h1>
-                    <p><?php echo JHTML::_('string.truncate', $this->item->text, true, false, false) ; ?></p>
-                </div>
-                <?php if ($params->get('show_tags', 1) && !empty($this->item->tags->itemTags)) : ?>
-                    <div class="argomenti-section px-4 mt-5">
-                        <h2 class="h6">Argomenti</h2>
-                        <div class="badges greenlight">
-                            <?php $this->item->tagLayout = new FileLayout('joomla.content.tags'); ?>
-                            <?php echo $this->item->tagLayout->render($this->item->tags->itemTags); ?>
-                        </div>
-                    </div>
-                <?php endif; ?>
-            </div>
-        </div>
+    <div class="row">
+    <div class="col-md-5 d-flex flex-column">
+
+    <div class="hero-title">
+    <h1><?php echo $this->escape($this->item->title); ?></h1>
     </div>
+
+    <!-- Spinge l'autore in basso -->
+    <div class="mt-auto pt-3 px-4">
+    <?php
+    echo LayoutHelper::render(
+        'joomla.content.info_block.author',
+        [
+            'item'   => $this->item,
+            'params' => $this->params
+        ]
+    );
+    ?>
+    </div>
+
+    </div>
+    </div>
+    </div>
+
+
 
 </section>
 
@@ -161,6 +167,16 @@ $baseImagePath = Uri::root(false) . "media/templates/site/joomla-italia-theme/im
                             </div>
                         </div>
                     </aside>
+
+                    <?php if ($params->get('show_tags', 1) && !empty($this->item->tags->itemTags)) : ?>
+                    <div class="argomenti-section px-4 mt-5">
+                    <h2 class="h6">Argomenti</h2>
+                    <div class="badges greenlight">
+                    <?php $this->item->tagLayout = new FileLayout('joomla.content.tags'); ?>
+                    <?php echo $this->item->tagLayout->render($this->item->tags->itemTags); ?>
+                    </div>
+                    </div>
+                    <?php endif; ?>
                 </div>
                 <div class="col-12 col-lg-9 border-aside ps-lg-5 pt-0 py-lg-5">
                     <article class="article-wrapper redbrown <?php echo $this->pageclass_sfx; ?>" >
@@ -204,13 +220,11 @@ $baseImagePath = Uri::root(false) . "media/templates/site/joomla-italia-theme/im
                                 echo $this->item->toc;
                             endif; ?>
 
+                            <div class="com-content-article__body">
+                            <?php echo $this->item->text; ?>
+                            </div>
 
-                            <?php if ($info == 1 || $info == 2) : ?>
-                                <?php if ($useDefList) : ?>
-                                    <?php echo LayoutHelper::render('joomla.content.info_block', ['item' => $this->item, 'params' => $params, 'position' => 'below']); ?>
-                                <?php endif; ?>
 
-                            <?php endif; ?>
 
                             <?php
                             if (!empty($this->item->pagination) && $this->item->paginationposition && !$this->item->paginationrelative) :
