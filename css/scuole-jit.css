@@ -980,7 +980,7 @@ article {
 }
 
 .mod-lingua .lang-inline li {
-    padding: 12px;
+    padding: 4px;
     font-size: .778em;
     text-transform: uppercase;
 }
@@ -1925,11 +1925,11 @@ a.cardblu:hover{
 /* Carousel 400 */
 .carousel-400 {
     height: 400px;
-    padding-top: 0px;
 }
 
 .carousel-400 .splide__track {
     height: 100%;
+    padding-top: 0px;
 }
 
 .carousel-400 .splide__list {
