@@ -14,6 +14,8 @@ use Joomla\CMS\HTML\HTMLHelper;
 use Joomla\CMS\Language\Text;
 use Joomla\CMS\Layout\LayoutHelper;
 use Joomla\CMS\Router\Route;
+use Joomla\CMS\Uri\Uri;
+use Joomla\CMS\Factory;
 use Joomla\Component\Content\Site\Helper\RouteHelper;
 use Joomla\Component\Fields\Administrator\Helper\FieldsHelper;
 use Joomla\Component\Content\Administrator\Extension\ContentComponent;
@@ -24,6 +26,11 @@ use Joomla\Component\Content\Administrator\Extension\ContentComponent;
 //echo $items[0]->parent_language;
 //echo $items[0]->parent_title;
 
+?>
+
+<?php
+// Percorso base del template corrente, senza nome hardcoded
+$templatePath = Uri::root(true) . '/templates/' . Factory::getApplication()->getTemplate();
 ?>
 
 <?php foreach ($items as $item) : ?>
@@ -41,8 +48,8 @@ use Joomla\Component\Content\Administrator\Extension\ContentComponent;
             <div class="it-card-image-wrapper">
               <div class="ratio ratio-21x9">
                 <figure class="figure img-full">
-                    <?php if ((json_decode($item->images)->image_intro) ==''): ?> 
-                            <img src="/templates/joomla-italia-theme/img/imgsegnaposto.jpg" class="img-fluid" alt="<?php echo $item->title; ?>">
+                    <?php if ((json_decode($item->images)->image_intro) ==''): ?>
+                            <img src="<?php echo $templatePath; ?>/images/imgsegnaposto.jpg" class="img-fluid" alt="<?php echo $item->title; ?>">
                         <?php else: ?>   
                             <img src="<?php echo json_decode($item->images)->image_intro; ?>" class="img-fluid" alt="<?php echo $item->title; ?>" />
                         <?php endif; ?>

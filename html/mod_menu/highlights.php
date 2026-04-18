@@ -2,8 +2,7 @@
 defined('_JEXEC') or die;
 ?>
 
-<div class="container">
-  <div class="row">
+<div class="row g-3">
 
 <?php foreach ($list as $item) : ?>
 
@@ -12,7 +11,7 @@ defined('_JEXEC') or die;
   $bgclass = $item->anchor_css;    // classe css della voce
 ?>
 
-<div class="col-md-6" style="height:250px;margin-bottom:50px;">
+<div class="col-12 col-md-6">
 
   <div class="modern-card <?= htmlspecialchars($bgclass) ?> shadow-lg">
 
@@ -39,5 +38,4 @@ defined('_JEXEC') or die;
 
 <?php endforeach; ?>
 
-  </div>
 </div>
