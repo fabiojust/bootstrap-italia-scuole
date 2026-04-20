@@ -238,6 +238,39 @@ Voce di menu: Organizzazione
 
 ![menu-cerca-contatti](https://jit.protocollicreativi.it/templates/joomla-italia-theme/doc/img/menu-cerca-contatti.png)
 
+## Menu Highlights
+
+Il menu Highlights è un menu di primo piano (in evidenza) solitamente posizionato nella home page accanto allo slider principale. Questo menu è progettato per fornire un accesso rapido alle sezioni più importanti del sito attraverso delle card grafiche.
+
+### Gestione del menu
+
+Per creare e gestire il menu Highlights:
+
+1.  **Creazione del Menu**: 
+    - Vai su **Menu** -> **Gestione** -> **Nuovo**.
+    - Titolo: `Highlights`.
+    - Tipo menu: `menu-highlights`.
+
+2.  **Aggiunta delle voci**:
+    - Le voci di questo menu devono essere di tipo **Alias voce di menu**. Questo assicura che i link puntino correttamente alle voci esistenti nel menu principale, evitando duplicazioni di contenuti e facilitando la gestione.
+    - Per ogni voce:
+        - **Tipo di voce di menu**: Sistema -> Alias voce di menu.
+        - **Voce di menu**: Seleziona la voce di destinazione (es. Scuola, Servizi, ecc.).
+        - **Tab Link immagine**: Nel campo **Link immagine**, seleziona o carica l'immagine che farà da sfondo alla card.
+        - **Tab Opzioni link**: Nel campo **Stile CSS link**, puoi inserire una classe CSS personalizzata per la card (es. bg-primary,bg-success, bg-danger).
+
+### Visualizzazione (Modulo)
+
+Per visualizzare il menu sul sito, è necessario creare un modulo di tipo **Menu**:
+
+1.  **Nuovo Modulo**: Vai su **Moduli** -> **Nuovo** -> **Menu**.
+2.  **Titolo**: `Highlights`.
+3.  **Seleziona Menu**: `Highlights`.
+4.  **Posizione**: `highlights`.
+5.  **Tab Avanzate**:
+    - **Layout**: Seleziona `highlights` dal menu a tendina per applicare lo stile grafico a card previsto dal template.
+
+
 
 
 

@@ -435,5 +435,21 @@ Nella tab Avanzate:
 
 ![modulo-menu-secondario-avanzate](https://jit.protocollicreativi.it/templates/joomla-italia-theme/doc/img/modulo-menu-secondario-avanzate.png)
 
+### Modulo Highlights
+
+Questo modulo permette di visualizzare il menu Highlights con lo stile grafico a card in primo piano.
+
+- **Tipo modulo**: Menu
+- **Seleziona Menu**: Highlights
+- **Mostra titolo**: Nascondi (o secondo necessità)
+- **Posizione**: `highlights`
+- **Stato**: Pubblicato
+
+Nella tab **Avanzate**:
+- **Layout**: `highlights` (Override del template)
+
+
+
+
 
 
