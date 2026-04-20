@@ -11,7 +11,7 @@ defined('_JEXEC') or die;
   $bgclass = $item->anchor_css;    // classe css della voce
 ?>
 
-<div class="col-12 col-md-6">
+<div class="col-12 col-md-6 p-2">
 
   <div class="modern-card <?= htmlspecialchars($bgclass) ?> shadow-lg">
 

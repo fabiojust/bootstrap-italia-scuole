@@ -463,12 +463,6 @@ article {
     display: block;
 }
 
-.card-news-img {
-    width: 100px;
-    flex-shrink: 0;
-    height: 100px;
-    overflow: hidden;
-}
 
 .card.card-article .card-article-img .date span.month {
     font-size: 1.1rem;
@@ -480,15 +474,8 @@ article {
     font-weight: 400;
 }
 
-.card-news-img figure {
-    height: 100%;
-}
-
-.card-news-img img {
-    object-fit: cover;
-    height: auto;
-    width: 100%;
-    min-height: 100%;
+.mod-news .it-card.it-card-inline-mini .it-card-image-wrapper {
+    width: 40% !important;
 }
 
 .card.card-icon-main .card-icon-content p {
@@ -1082,6 +1069,17 @@ button.search-link {
 .mod-textimgageleft .primopiano-foto {
     width: unset;
     position: relative;
+}
+
+/* MENU VOCI */
+.navbar .navbar-collapsable .navbar-nav li.nav-item a.nav-link,
+.navbar .navbar-collapsable .navbar-nav li.nav-item button.nav-link {
+    padding: 13px 15px;
+}
+
+.navbar .navbar-collapsable .navbar-nav.navbar-secondary li:first-child a.nav-link,
+.navbar .navbar-collapsable .navbar-nav.navbar-secondary li a.nav-link {
+    color: #455b71 !important;
 }
 
 /* TAB OFFERTA FORMATIVA */
@@ -1760,7 +1758,7 @@ a.cardblu:hover{
     position: relative;
 }
 
-.sectioncartescuola::before {
+read .sectioncartescuola::before {
     background: #d1344c;
     position: absolute;
     z-index: 1;
@@ -1957,4 +1955,8 @@ a.cardblu:hover{
 .carousel-400 .ratio-21x9 {
     --bs-aspect-ratio: 42.8571428571%;
     max-height: 150px;
+}
+
+a.read-more {
+    color: var(--bs-primary);
 }

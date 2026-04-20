@@ -29,36 +29,35 @@ $baseImagePath = Uri::root(false) . "media/templates/site/joomla-italia-theme/im
 <?php foreach ($items as $item) : ?>
 
     <div class="col-12 col-lg-4 pb-3 mb-3">
-        <div class="card card-bg card-icon rounded h-100">
-            <div class="card-body">
-                <div class="card-icon-content d-flex align-items-center">
-                    <div class="card-news-img me-3">
-
-
-                        <figure class="figure">
-                            <a href="<?php echo $item->link; ?>" itemprop="url" title="<?php echo $item->title; ?>">
+        <article class="it-card it-card-inline it-card-inline-mini it-card-image rounded shadow-sm border h-100">
+            <!--card first child is all the card content: title (link) + footer -->
+            <div class="it-card-inline-content">
+                <h3 class="it-card-title h6">
+                    <a href="<?php echo $item->link; ?>"><?php echo $item->title; ?></a>
+                </h3>
+                <?php if ($params->get('show_introtext')) : ?>
+                <p class="it-card-text px-3"><small><?php echo $item->displayIntrotext; ?></small></p>
+                <?php endif; ?>
+                <?php $date = $item->displayDate ?? $item->publish_up; ?>
+                <?php if ($date) : ?>
+                <footer class="it-card-related it-card-footer">
+                    <time class="it-card-date" datetime="<?php echo HTMLHelper::_('date', $date, 'Y-m-d'); ?>"><?php echo HTMLHelper::_('date', $date, Text::_('DATE_FORMAT_LC3')); ?></time>
+                </footer>
+                <?php endif; ?>
+            </div>
+            <!--card second child is the image (optional)-->
+            <div class="it-card-image-wrapper">
+                <div class="ratio ratio-1x1">
+                    <figure class="figure img-full">
                         <?php if ((json_decode($item->images)->image_intro) ==''): ?>
-                            <img src="<?= $baseImagePath ?>imgsegnaposto.jpg" class="img-fluid" alt="<?php echo $item->title; ?>">
+                            <img src="<?= $baseImagePath ?>imgsegnaposto.jpg" alt="<?php echo htmlspecialchars($item->title, ENT_QUOTES, 'UTF-8'); ?>">
                         <?php else: ?>
-                            <img src="<?php echo json_decode($item->images)->image_intro; ?>" class="img-fluid" alt="<?php echo $item->title; ?>" />
+                            <img src="<?php echo json_decode($item->images)->image_intro; ?>" alt="<?php echo htmlspecialchars($item->title, ENT_QUOTES, 'UTF-8'); ?>" />
                         <?php endif; ?>
-                            </a>
-                        </figure>
-
-                    </div>
-                    <a href="<?php echo $item->link; ?>" class="" data-focus-mouse="false">
-                        <div class="blogitem-header">
-                            <p class="mb-0 lh100">
-                                <strong><?php echo $item->title; ?></strong>
-                            </p>
-                        </div>
-                        <?php if ($params->get('show_introtext')) : ?>
-                        <small><?php echo $item->displayIntrotext; ?></small>
-                        <?php endif; ?>
-                    </a>
+                    </figure>
                 </div>
             </div>
-        </div>
+        </article>
     </div>
 <?php endforeach; ?>
 <div class="col-12 text-center">
