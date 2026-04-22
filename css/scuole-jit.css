@@ -1960,3 +1960,40 @@ read .sectioncartescuola::before {
 a.read-more {
     color: var(--bs-primary);
 }
+
+/* Stili per il calendario sovrapposto nelle it-card eventi */
+.it-card-image-wrapper .card-calendar {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    text-align: center;
+    z-index: 2;
+    min-width: 60px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.it-card-image-wrapper .card-calendar .card-date {
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1;
+    display: block;
+}
+
+.it-card-image-wrapper .card-calendar .card-day {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    line-height: 1.2;
+    display: block;
+}
+
+.it-card .it-card-link,
+article.it-card .it-card-link {
+    color: var(--bs-primary) !important;
+    position: absolute;
+    bottom: 20px;
+    right: 30px;
+}

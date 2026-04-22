@@ -16,8 +16,11 @@ use Joomla\CMS\Layout\LayoutHelper;
 use Joomla\CMS\Router\Route;
 use Joomla\Component\Content\Site\Helper\RouteHelper;
 use Joomla\CMS\Uri\Uri;
+use Joomla\CMS\Factory;
 
-$baseImagePath = Uri::root(false) . "media/templates/site/joomla-italia-theme/images/";
+$app = Factory::getApplication();
+$template = $app->getTemplate(true)->template;
+$baseImagePath = Uri::root(false) . "media/templates/site/" . $template . "/images/";
 
 //print_r($items[0]->parent_title);
 //echo $items[0]->parent_id;
@@ -25,29 +28,33 @@ $baseImagePath = Uri::root(false) . "media/templates/site/joomla-italia-theme/im
 //echo $items[0]->parent_title;
 
 ?>
-<div class="owl-carousel owl-theme" id="carosello-documenti">
+<ul class="splide__list it-carousel-all">
     <?php foreach ($items as $item) : ?>
-    <div>
-        <div class="redbrown card card-large card-bg card-icon card-icon-main rounded my-3">
-            <a href="<?php echo $item->link; ?>" title="<?php echo $item->title; ?>">
-                <div class="card-body card-body-min-height">
-                    <svg class="icon icon-xs d-inline-block">
-                        <use xlink:href="<?= $baseImagePath ?>sprites.svg#it-file-pdf"></use>
-                    </svg>
-                    <div class="card-icon-content">
-                    <h3><?php echo $item->title; ?></h3>
+    <li class="splide__slide">
+        <div class="it-single-slide-wrapper p-2 h-100">
+            <article class="it-card rounded border shadow-sm h-100">
+                <h4 class="it-card-title it-card-title-icon">
+                    <a href="<?php echo $item->link; ?>" title="<?php echo htmlspecialchars($item->title, ENT_QUOTES, 'UTF-8'); ?>">
+                        <?php echo $item->title; ?>
+                        <div class="it-card-title-icon-wrapper">
+                            <svg class="icon icon-primary" aria-hidden="true">
+                                <use href="<?= $baseImagePath ?>sprites.svg#it-file"></use>
+                            </svg>
+                        </div>
+                    </a>
+                </h4>
+                <div class="it-card-body">
                     <?php if ($params->get('show_introtext')) : ?>
-                        <p>
-                            <?php echo $item->displayIntrotext; ?>
-                        </p>
+                        <p class="it-card-text"><?php echo $item->displayIntrotext; ?></p>
                     <?php endif; ?>
-                    </div>
+                    <footer class="it-card-related">
+                        <div class="it-card-taxonomy">
+                            <a href="<?php echo Route::_(RouteHelper::getCategoryRoute($item->catid, $item->language)); ?>" class="it-card-category it-card-link"><span class="visually-hidden">Categoria correlata: </span><?php echo $item->category_title; ?></a>
+                        </div>
+                    </footer>
                 </div>
-            </a>
+            </article>
         </div>
-    </div>
+    </li>
     <?php endforeach; ?>
-</div>
-<div class="col-12 text-center">
-    <a href="<?php echo Route::_(RouteHelper::getCategoryRoute($items[0]->parent_id, $items[0]->parent_language)); ?>" class="btn btn-redbrown mt-4" title="Vai alle carte della scuola">Tutti i documenti</a>
-</div>
+</ul>

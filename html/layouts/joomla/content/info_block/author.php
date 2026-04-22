@@ -42,16 +42,6 @@ $linkAuthor = !empty($item->contact_link) && $params && $params->get('link_autho
         // Carica l'oggetto utente
         $user = JFactory::getUser($userId);
 
-
-
-
-
-
-
-
-
-
-
         // Verifica se l'utente esiste
         if (!$user->id) {
             echo 'Utente non trovato.';
@@ -64,9 +54,6 @@ $linkAuthor = !empty($item->contact_link) && $params && $params->get('link_autho
                     break;
                 }
             }
-
-
-
 
                 $mailOut = htmlspecialchars($user->email);
 
@@ -85,14 +72,13 @@ $linkAuthor = !empty($item->contact_link) && $params && $params->get('link_autho
                 // Sostituisci i segnaposto con i dati dell'utente, gestendo valori vuoti
                 echo '<div class="avatar size-sm">'. $immagineProfilo.'</div>';
                 echo '<div class="ms-3 card-avatar-content">';
-                echo '<small class="">'.Text::sprintf('COM_CONTENT_WRITTEN_BY', $author).'<a href="mailto:'.$mailOut.'">'.htmlspecialchars($user->name).'</a></small></div>';
+                echo '<small class="">'.Text::sprintf('COM_CONTENT_WRITTEN_BY', '').'<a href="mailto:'.$mailOut.'">'.htmlspecialchars($authorName).'</a></small></div>';
 
 
         }
 
         ?>
         </div>    </div>
-
 
 
 </dd>

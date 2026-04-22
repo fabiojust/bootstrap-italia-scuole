@@ -16,13 +16,14 @@ use Joomla\CMS\Layout\LayoutHelper;
 use Joomla\CMS\Router\Route;
 use Joomla\Component\Content\Site\Helper\RouteHelper;
 use Joomla\CMS\Uri\Uri;
-
+use Joomla\CMS\Factory;
 //print_r($items[0]->parent_title);
 //echo $items[0]->parent_id;
 //echo $items[0]->parent_language;
 //echo $items[0]->parent_title;
-
-$baseImagePath = Uri::root(false) . "media/templates/site/joomla-italia-theme/images/";
+$app = Factory::getApplication();
+$template = $app->getTemplate(true)->template;
+$baseImagePath = Uri::root(false) . "media/templates/site/" . $template . "/images/";
 
 ?>
 
@@ -30,7 +31,6 @@ $baseImagePath = Uri::root(false) . "media/templates/site/joomla-italia-theme/im
 
     <div class="col-12 col-lg-4 pb-3 mb-3">
         <article class="it-card it-card-inline it-card-inline-mini it-card-image rounded shadow-sm border h-100">
-            <!--card first child is all the card content: title (link) + footer -->
             <div class="it-card-inline-content">
                 <h3 class="it-card-title h6">
                     <a href="<?php echo $item->link; ?>"><?php echo $item->title; ?></a>
@@ -38,14 +38,36 @@ $baseImagePath = Uri::root(false) . "media/templates/site/joomla-italia-theme/im
                 <?php if ($params->get('show_introtext')) : ?>
                 <p class="it-card-text px-3"><small><?php echo $item->displayIntrotext; ?></small></p>
                 <?php endif; ?>
+                
+                <?php if ($params->get('show_tags', 1) && !empty($item->tags->itemTags)) : ?>
+                <div class="px-3 mb-3">
+                    <?php foreach ($item->tags->itemTags as $tag) : ?>
+                        <span class="badge bg-primary text-white"><?php echo $tag->title; ?></span>
+                    <?php endforeach; ?>
+                </div>
+                <?php endif; ?>
+
                 <?php $date = $item->displayDate ?? $item->publish_up; ?>
                 <?php if ($date) : ?>
                 <footer class="it-card-related it-card-footer">
                     <time class="it-card-date" datetime="<?php echo HTMLHelper::_('date', $date, 'Y-m-d'); ?>"><?php echo HTMLHelper::_('date', $date, Text::_('DATE_FORMAT_LC3')); ?></time>
                 </footer>
                 <?php endif; ?>
+                
+                <?php if ($params->get('show_author', 0) && !empty($item->author)) : ?>
+                <div class="px-3 pb-3">
+                    <?php
+                    echo LayoutHelper::render(
+                        'joomla.content.info_block.author',
+                        [
+                            'item'   => $item,
+                            'params' => $params
+                        ]
+                    );
+                    ?>
+                </div>
+                <?php endif; ?>
             </div>
-            <!--card second child is the image (optional)-->
             <div class="it-card-image-wrapper">
                 <div class="ratio ratio-1x1">
                     <figure class="figure img-full">

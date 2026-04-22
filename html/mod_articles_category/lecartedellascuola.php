@@ -34,15 +34,29 @@ $countcat =0;
     <div class="container mod-schededidattiche">
 
         <div class="row justify-content-center">        
-            <?php if ((bool) $module->showtitle) : ?>
-                <div class="col-12 text-center titlecartescuola">
-                    <h2><?php echo $module->title; ?></h2>
-                    <p>I documenti recenti</p>
-                </div>
-            <?php endif; ?>
             <div class="col-md-10">
-                <?php $items = $list; ?>
-                <?php require ModuleHelper::getLayoutPath('mod_articles_category', $params->get('layout', 'default') . '_items'); ?>
+                <div class="it-carousel-wrapper it-carousel-landscape-abstract-three-cols splide" data-bs-carousel-splide data-splide='{"gap":".5rem", "breakpoints":{"768":{"gap":".5rem"}, "992":{"gap":".5rem"}}}'>
+                    <?php if ((bool) $module->showtitle) : ?>
+                    <div class="it-header-block mb-4">
+                        <div class="it-header-block-title">
+                            <h2><?php echo $module->title; ?></h2>
+                            <p>I documenti recenti</p>
+                        </div>
+                    </div>
+                    <?php endif; ?>
+                    <div class="splide__track ps-lg-3 pe-lg-3">
+                        <?php $items = $list; ?>
+                        <?php require ModuleHelper::getLayoutPath('mod_articles_category', $params->get('layout', 'default') . '_items'); ?>
+                    </div>
+                </div>
+
+                <?php if (!empty($list)) : ?>
+                <div class="row mt-4">
+                    <div class="col-12 text-center">
+                        <a href="<?php echo Route::_(RouteHelper::getCategoryRoute($list[0]->parent_id, $list[0]->parent_language)); ?>" class="btn btn-primary" title="Vai alle carte della scuola">Tutti i documenti</a>
+                    </div>
+                </div>
+                <?php endif; ?>
             </div>
         </div>
     </div>

@@ -25,7 +25,7 @@ $countcat =0;
 ?>
 
 <?php if ((bool) $module->showtitle) : ?>
-<section class="section bg-linear-vertical-blue-light">
+<section class="section pb-3">
     <div class="container">
         <div class="section-title text-center">
             <h2><?php echo $module->title; ?></h2>
@@ -33,7 +33,7 @@ $countcat =0;
     </div>
 </section>
     <?php endif; ?>
-    <div class="container slided-top pb-5">
+    <div class="container pb-5">
         <div class="row">
             <?php if ($grouped) : ?>
                 <?php foreach ($list as $groupName => $items) : ?>
