@@ -42,6 +42,8 @@ Nota: **categoria non obbligatoria, *necessario inserire una categoria anche con
 **Didattica**
 
 + Offerta formativa
+	+ Indirizzi di studio
+	+ Potenziamenti
 + Le schede didattiche
 	
 	+ *Scuola secondaria di secondo grado
