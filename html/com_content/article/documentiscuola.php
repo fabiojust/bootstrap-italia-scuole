@@ -61,12 +61,9 @@ $baseImagePath= Uri::root(false) . "media/templates/site/joomla-italia-theme/ima
             <div class="row align-items-center">
                 <div class="col-auto d-none d-sm-block">
                     <div class="section-thumb-article mx-3">
-                        <?php if($fullimg->image_fulltext =='') { ?>
-                        <figure><a href="<?php echo Route::_(RouteHelper::getArticleRoute($this->item->slug, $this->item->catid, $this->item->language)); ?>" itemprop="url" title="service-link"><img src="<?= $baseImagePath ?>imgsegnaposto.jpg" class="img-fluid" alt="immagine-segnaposto"/></a></figure>
-                        <?php } else {
-                            echo LayoutHelper::render('joomla.content.full_image', $this->item);
-                        }
-?>
+                        <svg class="icon icon-lg icon-primary">
+                            <use xlink:href="<?= $baseImagePath ?>sprites.svg#it-document"></use>
+                        </svg>
                     </div>
                 </div>
                 <div class="ps-0 ps-lg-3 col col-lg-6 col-xl-7">
