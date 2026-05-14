@@ -57,6 +57,7 @@ $btnClass     = 'btn-outline-' . $colorName; // es. btn-outline-success
 
 // Scegli lo sprite corretto (Bootstrap Icons "bi-" vs Bootstrap Italia "it-")
 $spriteFile = str_starts_with($iconName, 'bi-') ? 'bootstrap-icons.svg' : 'sprites.svg';
+$iconAnchor = ($spriteFile === 'bootstrap-icons.svg') ? substr($iconName, 3) : $iconName;
 
 // ── In modalità 'image': image_intro è il percorso file dal media manager ─────
 $imageUrl = !empty($introimg->image_intro) ? htmlspecialchars($introimg->image_intro, ENT_QUOTES, 'UTF-8') : '';
@@ -72,7 +73,7 @@ $imageAlt = htmlspecialchars($introimg->image_intro_alt ?? $this->item->title, E
         <?php /* Modalità ICONA: il nome dello sprite viene letto da image_intro */ ?>
         <div class="it-card-icon-area text-center pt-4 pb-2">
             <svg class="icon icon-xl <?php echo $iconClass; ?>" aria-hidden="true">
-                <use href="<?= $baseImagePath ?><?= $spriteFile ?>#<?php echo htmlspecialchars($iconName, ENT_QUOTES, 'UTF-8'); ?>"></use>
+                <use href="<?= $baseImagePath ?><?= $spriteFile ?>#<?php echo htmlspecialchars($iconAnchor, ENT_QUOTES, 'UTF-8'); ?>"></use>
             </svg>
         </div>
 

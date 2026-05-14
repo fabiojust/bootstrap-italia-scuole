@@ -41,3 +41,15 @@ Nella scheda **Immagini e link** dell'articolo:
 Nella scheda **Immagini e link** dell'articolo:
 - **Immagine intro**: Carica normalmente dal Media Manager un'immagine fotografica. Verrà mostrata a larghezza piena in cima alla card.
 - **Didascalia immagine intro**: Specifica solo il nome del colore Bootstrap (es. `success`, `warning`, `primary`, `danger`, `info`) per colorare il bordo superiore e il bottone.
+
+# Le Sedi (La Scuola)
+
+La pagina principale "La Scuola" integra automaticamente una sezione **Le nostre sedi** in fondo alla pagina, pescando gli articoli inseriti nella categoria con alias `edifici-scolastici` (oppure `edifici`). 
+
+Per far sì che l'articolo si impagini correttamente come nel layout a card:
+- **Titolo dell'articolo**: Inserisci il nome della sede (es. *Sede Centrale*, *Succursale*). Verrà mostrato come etichetta in alto a sinistra sull'immagine.
+- **Campo Aggiuntivo "Indirizzo"**: Inserisci l'indirizzo esatto nell'apposito custom field (verrà mostrato come titolo sotto la foto). *(In alternativa, usa la Didascalia Immagine Intro)*.
+- **Immagine intro**: Carica la foto dell'edificio nella scheda *Immagini e link*.
+- **Testo dell'articolo (Introtext)**: Scrivi la descrizione della sede (es. *Cuore pulsante dell'istituto...*).
+- **Bottone Scopri la sede**: Viene generato automaticamente dal sistema e linkerà direttamente alla pagina dell'articolo per leggere maggiori dettagli.
+- **Testo Link A (in Immagini e link)**: Scrivi i mezzi di trasporto (es. *Linee 21, 22, 93*). Apparirà l'icona dell'autobus con questo testo.

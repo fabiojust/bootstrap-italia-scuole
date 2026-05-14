@@ -366,6 +366,17 @@
 
 		</fieldset>
 
+		<fieldset name="scuola_stats" label="Statistiche Scuola" description="Personalizza i numeri e la citazione nell'header della pagina Scuola">
+			<field name="quote_text" type="textarea" rows="2" label="Citazione" default="&quot;Aiutami a fare da me&quot;" />
+			<field name="quote_author" type="text" label="Autore citazione" default="M. Montessori" />
+			<field name="stat_studenti" type="text" label="Numero Studenti attivi" default="1.227" />
+			<field name="stat_docenti" type="text" label="Numero Docenti" default="103" />
+			<field name="stat_laboratori" type="text" label="Numero Laboratori" default="7" />
+			<field name="stat_aule" type="text" label="Numero Aule tematiche" default="8" />
+			<field name="stat_ata" type="text" label="Numero Personale ATA" default="25" />
+			<field name="stat_progetti" type="text" label="Numero Progetti attivi" default="12" />
+		</fieldset>
+
 		<fieldset name="article"
 			label="COM_CONTENT_ATTRIBS_FIELDSET_LABEL"
 			addfieldprefix="Joomla\Component\Content\Administrator\Field"

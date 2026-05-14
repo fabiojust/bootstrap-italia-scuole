@@ -30,3 +30,17 @@ Ad ogni argomento presente nel sito deve corrispondere un tag e relativa voce di
 ![categorie-articoli](https://jit.protocollicreativi.it/templates/joomla-italia-theme/doc/img/categorie-articoli.png)
 
 ![blog-articoli-in-evidenza](https://jit.protocollicreativi.it/templates/joomla-italia-theme/doc/img/blog-articoli-in-evidenza.png)
+
+**Configurazione Pagina Scuola (Header, Statistiche e Citazione)**
+
+La pagina che utilizza il layout "Pagina Scuola" (solitamente la voce "La Scuola") include un header *hero* con sfondo fotografico, una citazione e le statistiche dell'istituto.
+
+Per personalizzare questi elementi:
+1. Vai su **Menu** -> **Menu Principale** (o dove hai posizionato la voce).
+2. Modifica la voce di menu che usa il tipo "Categoria Blog" con layout **scuola**.
+3. Spostati sulla scheda **Statistiche Scuola**.
+4. Qui potrai compilare:
+   - **Citazione**: il testo della citazione.
+   - **Autore citazione**: il nome di chi ha detto la frase (es. M. Montessori).
+   - **Numeri**: Studenti, Docenti, Laboratori, Aule Tematiche.
+5. Per cambiare l'immagine di sfondo: Vai in **Contenuti** -> **Categorie**, modifica la categoria "La Scuola" (o quella collegata alla voce di menu) e nella scheda **Opzioni** carica l'immagine desiderata alla voce "Immagine".
