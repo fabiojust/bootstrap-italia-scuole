@@ -34,9 +34,21 @@ $baseImagePath = Uri::root(false) . 'media/templates/site/' . $template . '/imag
 
 $link = Route::_(RouteHelper::getArticleRoute($this->item->slug, $this->item->catid, $this->item->language));
 
-// ── Modalità card (passata dal template parent offertaformativa.php) ──────────
-// 'icon' = Indirizzi di Studio  |  'image' = Potenziamenti e Curvature
-$cardMode = $this->cardMode ?? 'icon';
+if (isset($this->cardMode)) {
+    $cardMode = $this->cardMode;
+} else {
+    // Recupera i parametri della categoria dal DB per capire se ha un'immagine impostata
+    $categoryId = $this->item->catid ?? 0;
+    $db = Factory::getDbo();
+    $query = $db->getQuery(true)
+        ->select('params')
+        ->from('#__categories')
+        ->where('id = ' . (int) $categoryId);
+    $db->setQuery($query);
+    $catParamsStr = $db->loadResult();
+    $thisCatParams = json_decode($catParamsStr ?? '{}');
+    $cardMode = !empty($thisCatParams->image) ? 'image' : 'icon';
+}
 
 // ── Parsing del campo "Didascalia immagine intro" (testo libero, nessuna validazione)
 // Formato: "nome-icona|nome-colore"   es. "it-code|success"
@@ -58,9 +70,11 @@ $btnClass     = 'btn-outline-' . $colorName; // es. btn-outline-success
 // Scegli lo sprite corretto (Bootstrap Icons "bi-" vs Bootstrap Italia "it-")
 $spriteFile = str_starts_with($iconName, 'bi-') ? 'bootstrap-icons.svg' : 'sprites.svg';
 $iconAnchor = ($spriteFile === 'bootstrap-icons.svg') ? substr($iconName, 3) : $iconName;
+$showIcon   = !empty(trim($captionParts[0]));
 
-// ── In modalità 'image': image_intro è il percorso file dal media manager ─────
-$imageUrl = !empty($introimg->image_intro) ? htmlspecialchars($introimg->image_intro, ENT_QUOTES, 'UTF-8') : '';
+// ── In assenza di icona: usa l'immagine intro a larghezza piena
+$imgIntro = !empty($introimg->image_intro) ? $introimg->image_intro : '';
+$imageUrl = $imgIntro ? (str_starts_with($imgIntro, 'http') || str_starts_with($imgIntro, '/') ? $imgIntro : Uri::root(true) . '/' . $imgIntro) : '';
 $imageAlt = htmlspecialchars($introimg->image_intro_alt ?? $this->item->title, ENT_QUOTES, 'UTF-8');
 
 ?>
@@ -69,16 +83,14 @@ $imageAlt = htmlspecialchars($introimg->image_intro_alt ?? $this->item->title, E
 
     <?php /* ── Area superiore: ICONA (Indirizzi) o IMMAGINE (Potenziamenti) ── */ ?>
 
-    <?php if ($cardMode === 'icon') : ?>
-        <?php /* Modalità ICONA: il nome dello sprite viene letto da image_intro */ ?>
+    <?php if ($showIcon) : ?>
         <div class="it-card-icon-area text-center pt-4 pb-2">
             <svg class="icon icon-xl <?php echo $iconClass; ?>" aria-hidden="true">
                 <use href="<?= $baseImagePath ?><?= $spriteFile ?>#<?php echo htmlspecialchars($iconAnchor, ENT_QUOTES, 'UTF-8'); ?>"></use>
             </svg>
         </div>
 
-    <?php elseif ($cardMode === 'image' && !empty($imageUrl)) : ?>
-        <?php /* Modalità IMMAGINE: immagine intro a larghezza piena, crop centrato */ ?>
+    <?php elseif (!empty($imageUrl)) : ?>
         <div class="it-card-image-wrapper overflow-hidden" style="height:140px;">
             <img src="<?php echo $imageUrl; ?>"
                  alt="<?php echo $imageAlt; ?>"
@@ -87,7 +99,6 @@ $imageAlt = htmlspecialchars($introimg->image_intro_alt ?? $this->item->title, E
         </div>
 
     <?php else : ?>
-        <?php /* Fallback: icona generica */ ?>
         <div class="it-card-icon-area text-center pt-4 pb-2">
             <svg class="icon icon-xl <?php echo $iconClass; ?>" aria-hidden="true">
                 <use href="<?= $baseImagePath ?>sprites.svg#it-presentation"></use>
@@ -109,9 +120,19 @@ $imageAlt = htmlspecialchars($introimg->image_intro_alt ?? $this->item->title, E
             </div>
         <?php endif; ?>
 
-        <?php /* Descrizione */ ?>
-        <p class="it-card-text small flex-grow-1">
-            <?php echo JHTML::_('string.truncate', $this->item->introtext, 160, false, false); ?>
+        <?php 
+            /* Descrizione: recupera il campo aggiuntivo cose-indirizzi (usando rawvalue) */
+            $descText = $this->item->introtext;
+            $customFields = \Joomla\Component\Fields\Administrator\Helper\FieldsHelper::getFields('com_content.article', $this->item, true);
+            foreach ($customFields as $field) {
+                if ($field->name === 'cose-indirizzi' && !empty($field->rawvalue)) {
+                    $descText = is_array($field->rawvalue) ? implode(', ', $field->rawvalue) : $field->rawvalue;
+                    break;
+                }
+            }
+        ?>
+        <p class="it-card-text small flex-grow-1 px-3">
+            <?php echo JHTML::_('string.truncate', strip_tags($descText), 160, false, false); ?>
         </p>
 
         <?php /* Bottone DETTAGLI */ ?>

@@ -101,8 +101,14 @@ $catImage  = !empty($catParams->image) ? $catParams->image : $baseImagePath . 'i
                     <?php
                         // cardMode: 'image' se la sotto-categoria ha un'immagine impostata in backend
                         // (es. Potenziamenti), 'icon' altrimenti (es. Indirizzi di Studio)
-                        $kp = @json_decode($kategorie->params ?? '{}');
-                        $this->cardMode = !empty($kp->image) ? 'image' : 'icon';
+                        if (is_object($kategorie->params) && method_exists($kategorie->params, 'get')) {
+                            $this->cardMode = !empty($kategorie->params->get('image')) ? 'image' : 'icon';
+                        } elseif (is_string($kategorie->params)) {
+                            $kp = @json_decode($kategorie->params);
+                            $this->cardMode = !empty($kp->image) ? 'image' : 'icon';
+                        } else {
+                            $this->cardMode = null; // Fallback per delegare ai sub-template
+                        }
                     ?>
                     <section class="py-5 border-bottom">
                         <div class="container">
